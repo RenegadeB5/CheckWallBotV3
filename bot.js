@@ -65,7 +65,7 @@ client.on ('message', message => {
 client.on ('message', message => {
   if (message.content === ".time") {
         time = minutes - 1
-        NOTIFY_CHANNEL.sendMessage('Its been' + " " + time + " " + 'minutes since the walls were last checked', {tts: false});
+        NOTIFY_CHANNEL.sendMessage('Its been' + " " + time + " " + 'minutes since the walls were last checked.', {tts: false});
   }
 });
 
