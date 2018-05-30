@@ -42,7 +42,7 @@ client.on('message', message => {
     lastSender = message.guild.lastSender = message.author
     lastTime = new Date()
  
-    NOTIFY_CHANNEL.sendMessage (lastsender + 'has cleared the walls')
+    NOTIFY_CHANNEL.sendMessage (lastSender + 'has cleared the walls')
     seconds = 0 }
 });
 //RAID ------------------------------------------------------------------
