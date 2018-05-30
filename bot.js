@@ -67,7 +67,7 @@ client.on ('message', message => {
   if (message.content === ".time") {
         min = Math.floor(seconds / 60)
         sec = ((seconds / 60) - (Math.floor(seconds / 60)) * 60
-        NOTIFY_CHANNEL.sendMessage('Its been' + " " + min + " " + 'minutes and' + " " + sec + " " + 'seconds since the walls were last checked.', {tts: false});
+        message.channel.send('Its been' + " " + min + " " + 'minutes and' + " " + sec + " " + 'seconds since the walls were last checked.', {tts: false});
   }
 });
       
@@ -78,7 +78,7 @@ client.on ('message', message => {
     .setTitle('CLICK FOR HELP')
     .addField('help')
     .setURL("https://raw.githubusercontent.com/RenegadeB5/ExiledMasterRace/master/help.md")
-      NOTIFY_CHANNEL2.sendEmbed(embed)
+      NOTIFY_CHANNEL.sendEmbed(embed)
   }})
 });
 
