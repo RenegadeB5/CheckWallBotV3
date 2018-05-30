@@ -18,6 +18,9 @@ client.on('ready', () => {
 }
 
 client.on('ready', () => {
+      client.user.setGame("Exiled R Shit! " + client.guilds.array().length + " Servers");
+      console.log('successfully Logged In As Wall Check Bot!');
+      NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       if (seconds > 60) {
             setInterval(notify, 60000)
             minutes = 1
@@ -35,17 +38,6 @@ client.on('ready', () => {
             }
 }});
 
-//ON LOGIN----------------------------------------------------------------------
-client.on('ready', () => {
-    client.user.setGame("Exiled R Shit! " + client.guilds.array().length + " Servers");
-    console.log('successfully Logged In As Wall Check Bot!');
-    NOTIFY_CHANNEL = client.channels.find("name", "checkwall"); // Channel to send notification
-      
-//SET INTERVAL------------------------------------------------------------------
-    
-//1200000 = 20 mins 900000 = 15 mins  1500000 = 25 mins 1800000 = 30 mins https://www.timecalculator.net/seconds-to-milliseconds
-} //1 second = 1000 ms
-);
 //CHECKED-----------------------------------------------------------------------
 client.on('message', message => {
   if (message.content == prefix + 'clear') {
