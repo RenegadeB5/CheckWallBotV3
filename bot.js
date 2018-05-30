@@ -88,4 +88,4 @@ client.on ('message', message => {
 }})
 )
 //LOGIN TOKEN-------------------------------------------------------------------
-client.login('MzczMTQwOTY2NjUzMDM0NTA2.DNsyfg.JlQTHYPaA7sXJ_sW4Eb7db7VWBk');
+client.login('NDA3NTkzODIzOTIxNzY2NDEw.DVIqzw.tVwiSN30_4x6LexUutYETZlyNAU');
