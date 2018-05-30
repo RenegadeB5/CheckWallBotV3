@@ -23,7 +23,7 @@ client.on('ready', () => {
       if (n = true) {
             console.log('hello');
             setInterval(notify, 60000)
-            minutes = 0
+            minutes = 1
             
             function notify() { 
                  if (minutes > 3) {
@@ -65,7 +65,7 @@ client.on ('message', message => {
 //kys bot-------------------------------------------------------------------
 client.on ('message', message => {
   if (message.content === ".time") {
-        time = minutes
+        time = math.floor(seconds / 60)
         NOTIFY_CHANNEL.sendMessage('Its been' + " " + time + " " + 'minutes since the walls were last checked.', {tts: false});
   }
 });
