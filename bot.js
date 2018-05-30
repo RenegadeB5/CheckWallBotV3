@@ -65,7 +65,7 @@ client.on ('message', message => {
 client.on ('message', message => {
   if (message.content === ".time") {
         time = seconds / 60
-        NOTIFY_CHANNEL.sendMessage('Its been' + " " + seconds + " " + 'seconds since the walls were last checked', {tts: false});
+        NOTIFY_CHANNEL.sendMessage('Its been' + " " + time + " " + 'seconds since the walls were last checked', {tts: false});
   }
 });
 
