@@ -11,13 +11,11 @@ var int1;
 var NOTIFY_CHANNEL;
 
 client.on('ready', () => {
-  setInterval(counter, 1000)
-  seconds = 0
-  function counter() {
-        seconds += 1
-}
-
-client.on('ready', () => {
+      setInterval(counter, 1000)
+      seconds = 0
+      function counter() {
+            seconds += 1
+      }
       client.user.setGame("Exiled R Shit! " + client.guilds.array().length + " Servers");
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
@@ -36,7 +34,7 @@ client.on('ready', () => {
                       minutes += 1
                       NOTIFY_CHANNEL.sendMessage (message)
             }
-}});
+}
 
 //CHECKED-----------------------------------------------------------------------
 client.on('message', message => {
@@ -77,6 +75,7 @@ client.on ('message', message => {
     .setURL("https://raw.githubusercontent.com/RenegadeB5/ExiledMasterRace/master/help.md")
       NOTIFY_CHANNEL2.sendEmbed(embed)
   }})
-})
+});
+
 //LOGIN TOKEN-------------------------------------------------------------------
 client.login('NDA3NTkzODIzOTIxNzY2NDEw.DVIqzw.tVwiSN30_4x6LexUutYETZlyNAU');
