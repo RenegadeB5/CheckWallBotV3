@@ -66,7 +66,7 @@ client.on ('message', message => {
 client.on ('message', message => {
   if (message.content === ".time") {
         min = Math.floor(seconds / 60)
-        sec = ((seconds / 60) - (Math.floor(seconds / 60))) * 60
+        sec = Math.floor(((seconds / 60) - (Math.floor(seconds / 60))) * 60)
         message.channel.send('Its been' + " ```" + min + " " + 'minutes and' + " " + sec + " " + 'seconds ``` since the walls were last checked.', {tts: false});
         }
 });
