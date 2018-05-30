@@ -84,8 +84,7 @@ client.on ('message', message => {
     .addField('help')
     .setURL("https://raw.githubusercontent.com/RenegadeB5/ExiledMasterRace/master/help.md")
       NOTIFY_CHANNEL2.sendEmbed(embed)
-  }
-}})
-)
+  }})
+}))
 //LOGIN TOKEN-------------------------------------------------------------------
 client.login('NDA3NTkzODIzOTIxNzY2NDEw.DVIqzw.tVwiSN30_4x6LexUutYETZlyNAU');
