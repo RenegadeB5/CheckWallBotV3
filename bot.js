@@ -2,13 +2,13 @@
 //anything with "//" infront of it is treated as a comment, it doesn't affect the code of the bot
 const Discord = require('discord.js');
 const config = require("./config.json");
+const sql = require("sqlite");
 var client = new Discord.Client();
 const prefix = ".";
-var test = 0;
 var lastTime;
-var key = 1;
 var int1;
 var NOTIFY_CHANNEL;
+sql.open("./score.sqlite");
 
 client.on('ready', () => {
       setInterval(counter, 1000)
@@ -48,7 +48,27 @@ client.on('message', message => {
  
     NOTIFY_CHANNEL.sendMessage (lastSender + " " + 'has cleared the walls')
     seconds = 0 }
+      
+        sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+    if (!row) {
+      sql.run("INSERT INTO scores (userId, points) VALUES (?, ?)", [message.author.id, 1, 0]);
+    } else {
+      let curLevel = Math.floor(0.1 * Math.sqrt(row.points + 1));
+      if (curLevel > row.level) {
+        row.level = curLevel;
+        sql.run(`UPDATE scores SET points = ${row.points + 1}, level = ${row.level} WHERE userId = ${message.author.id}`);
+        message.reply(`You've leveled up to level **${curLevel}**! Ain't that dandy?`);
+      }
+      sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);
+    }
+  }).catch(() => {
+    console.error;
+    sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
+      sql.run("INSERT INTO scores (userId, points) VALUES (?, ?)", [message.author.id, 1, 0]);
+    });
+  });
 });
+      
 //RAID ------------------------------------------------------------------
 client.on ('message', message => {
   if (message.content === prefix + "raid") {
@@ -66,6 +86,14 @@ client.on ('message', message => {
   if (message.content === ".time") {
         time = minutes - 1
         NOTIFY_CHANNEL.sendMessage('Its been' + " " + time + " " + 'minutes since the walls were last checked.', {tts: false});
+  }
+});
+      
+client.on ('message', message => {
+  if (message.content === ".score") {
+        sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+      if (!row) return message.reply("Your score is 0");
+      message.reply(`Your score is ${row.points}`);
   }
 });
 
