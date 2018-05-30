@@ -13,9 +13,9 @@ var NOTIFY_CHANNEL;
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "localhost:3306",
-  user: "renegadeb5",
-  password: "awigger"
+  host: "sql9.freemysqlhosting.net",
+  user: "	sql9240654",
+  password: "tAGDVrzlRs"
 });
 
 con.connect(function(err) {
