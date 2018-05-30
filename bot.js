@@ -22,15 +22,14 @@ client.on('ready', () => {
       if (seconds > 60) {
             setInterval(notify, 60000)
             minutes = 1
-            function notify() {
-                  if (minutes > 3) {
-                        tag = '@everyone'
-                  }
-                  else {
-                        tag = '@here'
-                  }
-                        
-                      message = tag + 'the walls have not been checked in' + minutes + 'minutes.'
+            if (minutes > 3) {
+                       tag = '@everyone'
+                 }
+                 else {
+                       tag = '@here'
+                 }
+            function notify() {                      
+                      message = tag + 'The walls have not been checked in' + minutes + 'minutes.'
                       minutes += 1
                       NOTIFY_CHANNEL.sendMessage (message)
             }
