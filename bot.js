@@ -94,7 +94,7 @@ client.on ('message', message => {
         sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
       if (!row) return message.reply("Your score is 0");
       message.reply(`Your score is ${row.points}`);
-  )}
+  )}}
 });
 
 
