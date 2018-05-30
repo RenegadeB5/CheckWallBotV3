@@ -65,7 +65,7 @@ client.on ('message', message => {
 //kys bot-------------------------------------------------------------------
 client.on ('message', message => {
   if (message.content === ".time") {
-        time = math.floor(seconds / 60)
+        time = Math.floor(seconds / 60)
         NOTIFY_CHANNEL.sendMessage('Its been' + " " + time + " " + 'minutes since the walls were last checked.', {tts: false});
   }
 });
