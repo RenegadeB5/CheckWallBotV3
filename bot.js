@@ -13,7 +13,7 @@ var NOTIFY_CHANNEL;
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "https://databases-auth.000webhost.com",
+  host: "localhost:3306",
   user: "renegadeb5",
   password: "awigger"
 });
