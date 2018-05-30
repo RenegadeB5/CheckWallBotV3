@@ -42,7 +42,7 @@ client.on('message', message => {
     lastSender = message.guild.lastSender = message.author
     lastTime = new Date()
  
-    NOTIFY_CHANNEL.sendMessage (lastSender + 'has cleared the walls')
+    NOTIFY_CHANNEL.sendMessage (lastSender + " " + 'has cleared the walls')
     seconds = 0 }
 });
 //RAID ------------------------------------------------------------------
@@ -59,8 +59,8 @@ client.on ('message', message => {
 
 //kys bot-------------------------------------------------------------------
 client.on ('message', message => {
-  if (message.content === "kys bot") {
-    NOTIFY_CHANNEL.sendMessage('Neck yourself', {tts: false});
+  if (message.content === ".time") {
+    NOTIFY_CHANNEL.sendMessage('Its been' + " " + seconds + " " + 'seconds since the walls were last checked', {tts: false});
   }
 });
 
