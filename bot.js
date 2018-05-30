@@ -43,6 +43,7 @@ client.on('message', message => {
   if (message.content == prefix + 'clear') {
     lastSender = message.guild.lastSender = message.author
     lastTime = new Date()
+    minutes = 0
     seconds = 0
     NOTIFY_CHANNEL.sendMessage (lastSender + " " + 'has cleared the walls.')
     }
