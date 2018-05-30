@@ -48,11 +48,11 @@ client.on('message', message => {
 //RAID ------------------------------------------------------------------
 client.on ('message', message => {
   if (message.content === prefix + "raid") {
-    NOTIFY_CHANNEL.sendMessage('@everyone SOME PAKI RAT IS RAIDING US!', {tts: false});
-    NOTIFY_CHANNEL.sendMessage('@everyone SOME PAKI RAT IS RAIDING US!', {tts: false});
-    NOTIFY_CHANNEL.sendMessage('@everyone SOME PAKI RAT IS RAIDING US!', {tts: false});
-    NOTIFY_CHANNEL.sendMessage('@everyone SOME PAKI RAT IS RAIDING US!', {tts: false});
-    NOTIFY_CHANNEL.sendMessage('@everyone SOME PAKI RAT IS RAIDING US!', {tts: false});
+    NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
+    NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
+    NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
+    NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
+    NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
   }
 });
 //RAID EAST-------------------------------------------------------------------
