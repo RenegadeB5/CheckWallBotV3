@@ -8,6 +8,26 @@ var lastTime;
 var int1;
 var NOTIFY_CHANNEL;
 
+
+
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "https://databases-auth.000webhost.com/db_routines.php?db=mysql&token=5791f912a2f79799dbcf8158301dd6c9",
+  user: "renegadeb5",
+  password: "awigger"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  /*Create a database named "mydb":*/
+  con.query("CREATE DATABASE mydb", function (err, result) {
+    if (err) throw err;
+    console.log("Database created");
+  });
+});
+
 client.on('ready', () => {
       setInterval(counter, 1000)
       seconds = 0
