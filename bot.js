@@ -34,7 +34,7 @@ client.on('ready', () => {
                  else {
                        tag = '@here'
                  }
-                      message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
+                      message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minute(s).'
                       minutes += 1
                       NOTIFY_CHANNEL.sendMessage (message)
             }
@@ -65,7 +65,7 @@ client.on ('message', message => {
 client.on ('message', message => {
   if (message.content === ".time") {
         time = minutes - 1
-        NOTIFY_CHANNEL.sendMessage('Its been' + " " + time + " " + 'minutes since the walls were last checked', {tts: false});
+        NOTIFY_CHANNEL.sendMessage('Its been' + " " + time + " " + 'minute(s) since the walls were last checked', {tts: false});
   }
 });
 
