@@ -18,11 +18,11 @@ client.on('ready', () => {
 }
 
 client.on('ready', () => {
-      if (seconds > 600) {
+      if (seconds > 60) {
             setInterval(notify, 60000)
-            minutes = 10
+            minutes = 1
             function notify() {
-                  if (minutes > 30) {
+                  if (minutes > 3) {
                         tag = '@everyone'
                   }
                   else {
