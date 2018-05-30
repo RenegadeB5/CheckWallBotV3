@@ -26,13 +26,14 @@ client.on('ready', () => {
             console.log('hello');
             setInterval(notify, 60000)
             minutes = 1
-            if (minutes > 3) {
+            
+            function notify() { 
+                 if (minutes > 3) {
                        tag = '@everyone'
                  }
                  else {
                        tag = '@here'
                  }
-            function notify() {                      
                       message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
                       minutes += 1
                       NOTIFY_CHANNEL.sendMessage (message)
@@ -63,7 +64,8 @@ client.on ('message', message => {
 //kys bot-------------------------------------------------------------------
 client.on ('message', message => {
   if (message.content === ".time") {
-    NOTIFY_CHANNEL.sendMessage('Its been' + " " + seconds + " " + 'seconds since the walls were last checked', {tts: false});
+        time = seconds / 60
+        NOTIFY_CHANNEL.sendMessage('Its been' + " " + seconds + " " + 'seconds since the walls were last checked', {tts: false});
   }
 });
 
