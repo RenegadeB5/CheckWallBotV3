@@ -68,7 +68,7 @@ client.on ('message', message => {
         min = Math.floor(seconds / 60)
         sec = ((seconds / 60) - (Math.floor(seconds / 60)) * 60
         message.channel.send('Its been' + " " + min + " " + 'minutes and' + " " + sec + " " + 'seconds since the walls were last checked.', {tts: false});
-  }
+        }
 });
       
 client.on ('message', message => {
