@@ -7,23 +7,6 @@ const prefix = ".";
 var lastTime;
 var int1;
 var NOTIFY_CHANNEL;
-var mysql = require('mysql');
-var con = mysql.createConnection({
-  
-  host: "sql9.freemysqlhosting.net",
-  user: "sql9240654",
-  password: "tAGDVrzlRs"
- 
-});
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  con.query("CREATE DATABASE mydb", function (err, result) {
-    if (err) throw err;
-    console.log("Database created");
-  });
-});
-
 
 client.on('ready', () => {
       setInterval(counter, 1000)
