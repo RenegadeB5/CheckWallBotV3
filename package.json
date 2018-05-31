@@ -7,7 +7,6 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "node-ftp": "",
     "glob": "",
     "lodash": "",
     "async": "",
