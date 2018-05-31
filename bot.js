@@ -34,8 +34,8 @@ client.on('ready', () => {
             }
       }
       function timeto() { 
-                if n === true {      
-                      console.log('hello');          
+                if n = true {      
+                      console.log('TRUE');          
                       message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
                       minutes += 1
                       NOTIFY_CHANNEL.sendMessage(message)
@@ -89,7 +89,7 @@ client.on ('message', message => {
 });
 
 client.on ('message', message => {
-  if (message.content === "feedback") {
+  if (message.content === ".feedback") {
         console.log(n);
         console.log(seconds);
         console.log(minutes);
