@@ -38,12 +38,12 @@ client.on('ready', () => {
                      else {
                            tag = '@here'
                      }
-      function timetocheck() {
-          if (n = true) {
-                console.log('hello');          
-                message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
-                minutes += 1
-                NOTIFY_CHANNEL.sendMessage(message)
+      function timetocheck() { 
+            if (n = true) {      
+                  console.log('hello');          
+                  message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
+                  minutes += 1
+                  NOTIFY_CHANNEL.sendMessage(message)
           }
            
       }
