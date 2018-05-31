@@ -51,7 +51,7 @@ client.on('message', message => {
       
 //RAID ------------------------------------------------------------------
 client.on ('message', message => {
-  if (message.content === prefix + "raid") {
+  if (message.content === prefix + "weewoo") {
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
