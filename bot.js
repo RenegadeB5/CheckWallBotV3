@@ -6,34 +6,7 @@ const prefix = ".";
 var lastTime;
 var int1;
 var NOTIFY_CHANNEL;
-var ftpClient = require('./client.js'),
-    config = {
-        host: 'ftp.drivehq.com',
-        port: 21,
-        user: 'renegadebb',
-        password: 'awigger'
-    },
-    options = {
-        logging: 'basic'
-    },
-    client = new ftpClient(config, options);
 
-client.connect(function () {
-
-    client.upload(['test/**'], '/trickstar', {
-        baseDir: 'trickstar',
-        overwrite: 'older'
-    }, function (result) {
-        console.log(result);
-    });
-
-    client.download('trickstar', 'trickstar/', {
-        overwrite: 'all'
-    }, function (result) {
-        console.log(result);
-    });
-
-});
 client.on('ready', () => {
       setInterval(counter, 1000)
       seconds = 0
