@@ -21,22 +21,22 @@ client.on('ready', () => {
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       if (seconds > 60) {
             n = true
-      }
-      while (n = true) {
-            console.log('hello');
-            setInterval(notify, 60000)
-            minutes = 1
+            while (n = true) {
+                console.log('hello');
+                setInterval(notify, 60000)
+                minutes = 1
             
-            function notify() { 
-                 if (minutes > 3) {
-                       tag = '@everyone'
-                 }
-                 else {
-                       tag = '@here'
-                 }
-                      message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
-                      minutes += 1
-                      NOTIFY_CHANNEL.sendMessage (message)
+                function notify() { 
+                     if (minutes > 3) {
+                           tag = '@everyone'
+                     }
+                     else {
+                           tag = '@here'
+                     }
+                          message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
+                          minutes += 1
+                          NOTIFY_CHANNEL.sendMessage (message)
+                }
             }
 }
 
