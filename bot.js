@@ -26,7 +26,7 @@ client.on('ready', () => {
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       function checkn() {
-          if (seconds > 60) {
+          if (seconds > 50) {
                 n = true
           }
             else {
