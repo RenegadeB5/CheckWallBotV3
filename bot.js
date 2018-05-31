@@ -11,7 +11,7 @@ sql.open("./score.sqlite");
 
 client.on('ready', () => {
       setInterval(counter, 1000)
-      setInterval(timetocheck, 60000)
+      setInterval(timeTocheck, 60000)
       setInterval(checkn, 1000)
       setInterval(notify,1000)
       seconds = 0
@@ -38,7 +38,7 @@ client.on('ready', () => {
                      else {
                            tag = '@here'
                      }
-      function timetocheck() { 
+      function timeTocheck() { 
             if (n = true) {      
                   console.log('hello');          
                   message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
