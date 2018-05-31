@@ -31,13 +31,6 @@ client.on('ready', () => {
                 n = false
                 }
       }
-      function notify() { 
-                     if (minutes > 3) {
-                           tag = '@everyone'
-                     }
-                     else {
-                           tag = '@here'
-                     }
       function timeto() { 
                 if (n = true) {      
                       console.log('hello');          
@@ -47,6 +40,14 @@ client.on('ready', () => {
             }
            
            }
+      function notify() { 
+                     if (minutes > 3) {
+                           tag = '@everyone'
+                     }
+                     else {
+                           tag = '@here'
+                     }
+      
        }
 
 //CHECKED-----------------------------------------------------------------------
