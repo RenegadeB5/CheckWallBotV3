@@ -12,7 +12,6 @@ sql.open("./score.sqlite");
 client.on('ready', () => {
       setInterval(counter, 1000)
       seconds = 0
-      n = false
       function counter() {
             seconds += 1
       }
@@ -20,8 +19,7 @@ client.on('ready', () => {
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       if (seconds > 60) {
-            n = true
-            while (n = true) {
+            while (seconds > 60) {
                 console.log('hello');
                 setInterval(notify, 60000)
                 minutes = 1
@@ -47,7 +45,6 @@ client.on('message', message => {
     lastTime = new Date()
     minutes = 1
     seconds = 0
-    n = false
     NOTIFY_CHANNEL.sendMessage (lastSender + " " + 'has cleared the walls.')
         sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
     if (!row) {
