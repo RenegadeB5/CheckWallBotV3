@@ -13,6 +13,7 @@ client.on('ready', () => {
       setInterval(counter, 1000)
       setInterval(timetocheck, 60000)
       setInterval(checkn, 1000)
+      setInterval(notify,1000)
       seconds = 0
       minutes = 1
       n = false
@@ -30,21 +31,19 @@ client.on('ready', () => {
                 n = false
                 }
       }
-      function timetocheck() {
-          if (n = true) {
-                console.log('hello');
-                notify()
-            
-                function notify() { 
+      function notify() { 
                      if (minutes > 3) {
                            tag = '@everyone'
                      }
                      else {
                            tag = '@here'
                      }
-                          message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
-                          minutes += 1
-                          NOTIFY_CHANNEL.sendMessage (message)
+        function timetocheck() {
+          if (n = true) {
+                console.log('hello');          
+                message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
+                minutes += 1
+                NOTIFY_CHANNEL.sendMessage (message)
                 }
           }
 }
