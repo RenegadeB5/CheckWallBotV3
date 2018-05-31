@@ -8,6 +8,9 @@ var lastTime;
 var int1;
 var NOTIFY_CHANNEL;
 
+myFTPClient =new Packages.org.apache.commons.net.ftp.FTPClient(); myFTPClient.connect("ftp.drivehq.com"); myFTPClient.login("renegadebb","awigger"); logger.debug(myFTPClient.getReplyCode()+" "+myFTPClient.getReplyString());
+
+
 client.on('ready', () => {
       setInterval(counter, 1000)
       seconds = 0
