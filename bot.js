@@ -11,9 +11,10 @@ sql.open("./score.sqlite");
 
 client.on('ready', () => {
       setInterval(counter, 1000)
-      setInterval(timetocheck, 1000)
+      setInterval(timetocheck, 60000)
       setInterval(checkn, 1000)
       seconds = 0
+      minutes = 1
       n = false
       function counter() {
             seconds += 1
@@ -32,8 +33,7 @@ client.on('ready', () => {
       function timetocheck() {
           if (n = true) {
                 console.log('hello');
-                setInterval(notify, 60000)
-                minutes = 1
+                notify()
             
                 function notify() { 
                      if (minutes > 3) {
