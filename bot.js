@@ -12,6 +12,7 @@ sql.open("./score.sqlite");
 client.on('ready', () => {
       setInterval(counter, 1000)
       seconds = 0
+      n = false
       function counter() {
             seconds += 1
       }
