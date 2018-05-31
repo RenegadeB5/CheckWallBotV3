@@ -6,8 +6,12 @@ const prefix = ".";
 var lastTime;
 var int1;
 var NOTIFY_CHANNEL;
+var seconds = 0
+var minutes = 1
+var n = false
 const sql = require("sqlite");
 sql.open("./score.sqlite");
+
 
 client.on('ready', () => {
       setInterval(counter, 1000)
