@@ -59,7 +59,6 @@ client.on('message', message => {
           sql.run("INSERT INTO scores (userId, points) VALUES (?, ?)", [message.author.id, 1, 0]);
       });
       })  
-        }
       
 });
       
