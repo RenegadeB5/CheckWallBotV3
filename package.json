@@ -7,7 +7,7 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "ftp": "",
+    "ftp-client": "",
     "discord.js": "11.1.0",
     "request": "2.81.0"
   }
