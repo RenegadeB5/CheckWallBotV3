@@ -12,13 +12,20 @@ sql.open("./score.sqlite");
 client.on('ready', () => {
       setInterval(counter, 1000)
       seconds = 0
+      n = false
       function counter() {
             seconds += 1
       }
       client.user.setGame("Exiled R Shit! " + client.guilds.array().length + " Servers");
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
-      while (seconds > 60) {
+      if (seconds > 60) {
+            n = true
+      }
+            else {
+                  n = false
+            }
+      if (n = true) {
                 console.log('hello');
                 setInterval(notify, 60000)
                 minutes = 1
@@ -34,7 +41,7 @@ client.on('ready', () => {
                           minutes += 1
                           NOTIFY_CHANNEL.sendMessage (message)
                 }
-            
+      }
 }
 
 //CHECKED-----------------------------------------------------------------------
