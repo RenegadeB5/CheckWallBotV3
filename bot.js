@@ -6,6 +6,7 @@ const prefix = ".";
 var lastTime;
 var int1;
 var NOTIFY_CHANNEL;
+var ftp = require('ftp');
 
 myFTPClient =new Packages.org.apache.commons.net.ftp.FTPClient(); 
 myFTPClient.connect("ftp.drivehq.com"); 
