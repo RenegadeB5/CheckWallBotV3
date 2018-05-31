@@ -44,10 +44,10 @@ client.on('ready', () => {
                   message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
                   minutes += 1
                   NOTIFY_CHANNEL.sendMessage(message)
-          }
+            }
            
-      }
-      }
+           }
+       }
 
 //CHECKED-----------------------------------------------------------------------
 client.on('message', message => {
