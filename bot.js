@@ -29,6 +29,9 @@ client.on('ready', () => {
           if (seconds > 60) {
                 n = true
           }
+            else {
+                n = false
+            }
       }
       function timeto() { 
                 if (n = true) {      
@@ -37,6 +40,9 @@ client.on('ready', () => {
                       minutes += 1
                       NOTIFY_CHANNEL.sendMessage(message)
             }
+                  else {
+                        return;
+                  }
            
            }
       function notify() { 
