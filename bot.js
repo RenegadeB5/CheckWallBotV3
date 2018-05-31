@@ -18,8 +18,7 @@ client.on('ready', () => {
       client.user.setGame("Exiled R Shit! " + client.guilds.array().length + " Servers");
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
-      if (seconds > 60) {
-            while (seconds > 60) {
+      while (seconds > 60) {
                 console.log('hello');
                 setInterval(notify, 60000)
                 minutes = 1
@@ -35,7 +34,7 @@ client.on('ready', () => {
                           minutes += 1
                           NOTIFY_CHANNEL.sendMessage (message)
                 }
-            }
+            
 }
 
 //CHECKED-----------------------------------------------------------------------
