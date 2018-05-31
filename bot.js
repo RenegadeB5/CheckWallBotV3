@@ -52,12 +52,13 @@ client.on('message', message => {
           sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);
           }
           sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);
-        })
+        }
       }).catch(() => {
         console.error;
         sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER)").then(() => {
           sql.run("INSERT INTO scores (userId, points) VALUES (?, ?)", [message.author.id, 1, 0]);
-        });
+      });
+      })  
         }
       
 });
