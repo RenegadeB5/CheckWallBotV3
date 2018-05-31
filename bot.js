@@ -16,6 +16,12 @@ var con = mysql.createConnection({
   host: "sql9.freemysqlhosting.net",
   user: "sql9240654",
   password: "tAGDVrzlRs"
+  
+  insert(user, callback) {
+    var sql = "INSERT INTO website.users (`first_name`,`last_name`,`username`,`password`) VALUES(?,?,?,?)";
+
+    db.query(sql, [user.getFirstName(), user.getLastName(), user.getUsername(), user.getPassword()], callback)
+}
 });
 
 con.connect(function(err) {
