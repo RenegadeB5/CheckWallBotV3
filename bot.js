@@ -21,7 +21,7 @@ client.on('ready', () => {
       if (seconds > 60) {
             n = true
       }
-      if (n = true) {
+      while (n = true) {
             console.log('hello');
             setInterval(notify, 60000)
             minutes = 1
