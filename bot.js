@@ -46,6 +46,7 @@ client.on('message', message => {
     lastTime = new Date()
     minutes = 1
     seconds = 0
+    n = false
     NOTIFY_CHANNEL.sendMessage (lastSender + " " + 'has cleared the walls.')
         sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
     if (!row) {
