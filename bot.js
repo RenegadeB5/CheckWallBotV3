@@ -38,7 +38,7 @@ client.on('ready', () => {
                      else {
                            tag = '@here'
                      }
-        function timetocheck() {
+      function timetocheck() {
           if (n = true) {
                 console.log('hello');          
                 message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
