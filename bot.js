@@ -20,11 +20,6 @@ con.connect(function(err) {
   console.log("Connected!");
 });
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  /*Create a database named "mydb":*/
-});
 
 client.on('ready', () => {
       setInterval(counter, 1000)
