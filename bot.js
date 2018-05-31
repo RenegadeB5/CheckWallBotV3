@@ -33,7 +33,7 @@ client.on('ready', () => {
             }
       }
       function timeto() { 
-                if 'true' {      
+                if == true {      
                       console.log('hello');          
                       message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
                       minutes += 1
