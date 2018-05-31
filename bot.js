@@ -87,7 +87,15 @@ client.on ('message', message => {
         message.channel.send('Its been' + " ```" + min + " " + 'minutes and' + " " + sec + " " + 'seconds ``` since the walls were last checked.', {tts: false});
         }
 });
-      
+
+client.on ('message', message => {
+  if (message.content === "feedback") {
+        console.log(n);
+        console.log(seconds);
+        console.log(minutes);
+        }
+});      
+
 client.on ('message', message => {
   if (message.content === prefix + "help") {
     const embed = new Discord.RichEmbed()
