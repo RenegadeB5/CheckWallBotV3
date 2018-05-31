@@ -14,7 +14,7 @@ sql.open("./score.sqlite");
 
 
 client.on('ready', () => {
-      setInterval(counter, 100)
+      setInterval(counter, 1000)
       setInterval(checkn, 100)
       setInterval(notify, 1000)
       setInterval(timeto, 60000)
