@@ -1,22 +1,3 @@
-Skip to content
- 
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- @RenegadeB5
-Sign out
- Watch 2
- Star 28  Fork 17 noodny/node-ftp-client
- Code  Issues 10  Pull requests 8  Projects 0  Wiki  Insights
-Branch: master Find file Copy path node-ftp-client/lib/client.js
-7f53c34  on Jun 1, 2014
-@noodny noodny Finished download functionality & documentation
-1 contributor
-RawBlameHistory    
-501 lines (432 sloc)  16.3 KB
 var fs = require('fs'),
     EventEmitter = require('events').EventEmitter,
     inherits = require('util').inherits,
@@ -518,16 +499,3 @@ Client.prototype._clean = function (files, baseDir) {
         }
     }));
 }
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About
-Press h to open a hovercard with more details.
