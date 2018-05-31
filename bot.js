@@ -27,9 +27,6 @@ client.on('ready', () => {
           if (seconds > 60) {
                 n = true
           }
-                else {
-                n = false
-                }
       }
       function timeto() { 
                 if (n = true) {      
