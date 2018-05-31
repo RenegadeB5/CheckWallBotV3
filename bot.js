@@ -41,7 +41,7 @@ client.on('ready', () => {
                           minutes += 1
                           NOTIFY_CHANNEL.sendMessage (message)
                 }
-      }
+      
 }
 
 //CHECKED-----------------------------------------------------------------------
