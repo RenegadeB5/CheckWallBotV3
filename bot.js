@@ -14,9 +14,7 @@ client.on('ready', () => {
       setInterval(checkn, 1000)
       setInterval(notify, 1000)
       setInterval(timeto, 60000)
-      seconds = 0
-      minutes = 1
-      n = false
+      
       function counter() {
             seconds += 1
       }
