@@ -58,7 +58,7 @@ client.on('message', message => {
         sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER)").then(() => {
           sql.run("INSERT INTO scores (userId, points) VALUES (?, ?)", [message.author.id, 1, 0]);
       });
-      })  
+      }  
       
 });
       
