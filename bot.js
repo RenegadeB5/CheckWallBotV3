@@ -7,13 +7,13 @@ var lastTime;
 var int1;
 var NOTIFY_CHANNEL;
 var minutes = 0
+var n = false
 const sql = require("sqlite");
 sql.open("./score.sqlite");
 
 
 client.on('ready', () => {
       setInterval(counter, 60000)
-      setInterval(checkn, 100)
       setInterval(notify, 1000)
       
       
@@ -25,17 +25,16 @@ client.on('ready', () => {
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       function checkn() {
           if (minutes > 1) {
-                setInterval(timeto, 60000)
+                n = true
           }
           else {
-                return;
+                n = false
             }
       }
       function timeto() { 
                     
                   console.log('TRUE');          
                   message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
-                  minutes += 1
                   NOTIFY_CHANNEL.sendMessage(message)
             }
            
@@ -55,7 +54,10 @@ client.on('message', message => {
     lastSender = message.guild.lastSender = message.author
     clearInterval(timeto)
     minutes = 0
+    n = false
     NOTIFY_CHANNEL.sendMessage (lastSender + " " + 'has cleared the walls.')
+    checkin();
+    setInterval(timeto, 60000)
        
   }   
 });
@@ -82,6 +84,7 @@ client.on ('message', message => {
 client.on ('message', message => {
   if (message.content === ".feedback") {
         console.log(minutes);
+        console.log(n);
         }
 });      
 
