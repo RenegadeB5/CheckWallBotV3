@@ -13,9 +13,7 @@ sql.open("./score.sqlite");
 
 
 client.on('ready', () => {
-      setInterval(counter, 60000)
-      setInterval(notify, 1000)
-      
+      setInterval(checkn, 100)
       
       function counter() {
             minutes += 1
@@ -53,11 +51,13 @@ client.on('message', message => {
   if (message.content == prefix + 'clear') {
     lastSender = message.guild.lastSender = message.author
     clearInterval(timeto)
+    clearInterval(counter)
     minutes = 0
     n = false
     NOTIFY_CHANNEL.sendMessage (lastSender + " " + 'has cleared the walls.')
-    checkin();
+    Thread.sleep(1000);
     setInterval(timeto, 60000)
+    setInterval(counter, 60000)
        
   }   
 });
