@@ -54,7 +54,7 @@ client.on('message', message => {
     clearInterval(counter)
     minutes = 0
     n = false
-    NOTIFY_CHANNEL.sendMessage (lastSender + " " + 'has cleared the walls.')
+    NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
     Thread.sleep(1000);
     setInterval(timeto, 60000)
     setInterval(counter, 60000)
