@@ -6,7 +6,7 @@ const prefix = ".";
 var lastTime;
 var int1;
 var NOTIFY_CHANNEL;
-var minutes = 0
+var minutes = 1
 var n = false
 const sql = require("sqlite");
 sql.open("./score.sqlite");
@@ -57,7 +57,7 @@ client.on('message', message => {
     lastSender = message.guild.lastSender = message.author
     clearInterval(timeto)
     clearInterval(counter)
-    minutes = 0
+    minutes = 1
     n = false
     NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
     setTimeout(restart, 1000);
