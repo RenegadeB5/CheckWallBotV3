@@ -6,45 +6,39 @@ const prefix = ".";
 var lastTime;
 var int1;
 var NOTIFY_CHANNEL;
-var seconds = 0
-var minutes = 1
-var n = false
+var minutes = 0
 const sql = require("sqlite");
 sql.open("./score.sqlite");
 
 
 client.on('ready', () => {
-      setInterval(counter, 1000)
+      setInterval(counter, 60000)
       setInterval(checkn, 100)
       setInterval(notify, 1000)
-      setInterval(timeto, 60000)
+      
       
       function counter() {
-            seconds += 1
+            minutes += 1
       }
       client.user.setGame("Exiled R Shit! " + client.guilds.array().length + " Servers");
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       function checkn() {
-          if (seconds > 50) {
-                n = true
+          if (minutes > 1) {
+                setInterval(timeto, 60000)
           }
-            else {
-                n = false
+          else {
+                return;
             }
       }
       function timeto() { 
-                if (n === true) {      
-                      console.log('TRUE');          
-                      message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
-                      minutes += 1
-                      NOTIFY_CHANNEL.sendMessage(message)
+                    
+                  console.log('TRUE');          
+                  message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
+                  minutes += 1
+                  NOTIFY_CHANNEL.sendMessage(message)
             }
-                  else {
-                        return;
-                  }
            
-           }
       function notify() { 
                      if (minutes > 3) {
                            tag = '@everyone'
@@ -59,9 +53,8 @@ client.on('ready', () => {
 client.on('message', message => {
   if (message.content == prefix + 'clear') {
     lastSender = message.guild.lastSender = message.author
-    n = false
-    minutes = 1
-    seconds = 0
+    clearInterval(timeto)
+    minutes = 0
     NOTIFY_CHANNEL.sendMessage (lastSender + " " + 'has cleared the walls.')
        
   }   
