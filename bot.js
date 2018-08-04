@@ -104,4 +104,4 @@ client.on ('message', message => {
 });
 
 //LOGIN TOKEN-------------------------------------------------------------------
-client.login('NDA3NTkzODIzOTIxNzY2NDEw.DkbAMA.jJqSfS0ThhPRL9rJpopFH3esTOk');
+client.login('NDA3NTkzODIzOTIxNzY2NDEw.DkbHgQ.-pV2jbg4emhlVziWiRE0ggtt4K0');
