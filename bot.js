@@ -18,6 +18,10 @@ client.on('ready', () => {
       function counter() {
             minutes += 1
       }
+      function restart() {
+            setInterval(timeto, 60000)
+            setInterval(counter, 60000)
+      }
       client.user.setGame("Exiled R Shit! " + client.guilds.array().length + " Servers");
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
@@ -56,8 +60,8 @@ client.on('message', message => {
     n = false
     NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
     wait(1000);
-    setInterval(timeto, 60000)
-    setInterval(counter, 60000)
+    setTimeout(restart, 1000);
+    
        
   }   
 });
