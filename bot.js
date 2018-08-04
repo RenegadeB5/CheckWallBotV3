@@ -27,7 +27,7 @@ client.on('ready', () => {
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       function checkn() {
-          if (minutes > 1) {
+          if (minutes > 3) {
                 n = true
           }
           else {
@@ -42,7 +42,7 @@ client.on('ready', () => {
             }
            
       function notify() { 
-                     if (minutes > 3) {
+                     if (minutes > 5) {
                            tag = '@everyone'
                      }
                      else {
