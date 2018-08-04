@@ -59,7 +59,6 @@ client.on('message', message => {
     minutes = 0
     n = false
     NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
-    wait(1000);
     setTimeout(restart, 1000);
     
        
