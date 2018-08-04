@@ -21,6 +21,7 @@ client.on('ready', () => {
       function restart() {
             setInterval(timeto, 60000)
             setInterval(counter, 60000)
+            setInterval(notify, 100)
       }
       client.user.setGame("Exiled R Shit! " + client.guilds.array().length + " Servers");
       console.log('successfully Logged In As Wall Check Bot!');
