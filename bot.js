@@ -81,8 +81,6 @@ client.on ('message', message => {
 
 client.on ('message', message => {
   if (message.content === ".feedback") {
-        console.log(n);
-        console.log(seconds);
         console.log(minutes);
         }
 });      
