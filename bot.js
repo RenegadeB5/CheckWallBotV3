@@ -20,7 +20,7 @@ client.on('ready', () => {
       function restart() {
             setInterval(timeto, 60000)
             setInterval(counter, 60000)
-            setInterval(notify, 100)
+            setInterval(notify, 1000)
       }
       client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
       console.log('successfully Logged In As Wall Check Bot!');
@@ -50,6 +50,7 @@ client.on('message', message => {
     lastSender = message.guild.lastSender = message.author
     clearInterval(timeto)
     clearInterval(counter)
+    clearInterval(notify)
     minutes = 0
     n = false
     NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
