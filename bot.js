@@ -16,6 +16,7 @@ client.on('ready', () => {
             minutes += 1
       }
       function restart() {
+            console.log('restarted');
             let minutes = 0
             setInterval(timeto, 60000);
             setInterval(counter, 60000);
