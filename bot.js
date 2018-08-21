@@ -23,7 +23,7 @@ client.on('ready', () => {
             setInterval(counter, 60000)
             setInterval(notify, 100)
       }
-      client.user.setGame("Exiled R Shit! " + client.guilds.array().length + " Servers");
+      client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       function checkn() {
@@ -104,4 +104,4 @@ client.on ('message', message => {
 });
 
 //LOGIN TOKEN-------------------------------------------------------------------
-client.login('NDA3NTkzODIzOTIxNzY2NDEw.DkbHgQ.-pV2jbg4emhlVziWiRE0ggtt4K0');
+client.login('process.env.BOT_TOKEN');
