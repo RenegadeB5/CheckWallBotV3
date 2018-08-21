@@ -81,7 +81,8 @@ client.on ('message', message => {
 //kys bot-------------------------------------------------------------------
 client.on ('message', message => {
   if (message.content === ".time") {
-        message.channel.send('Its been' + " ```" + minutes + " " + 'minutes ``` since the walls were last checked.', {tts: false});
+        let time2 = minutes - 1
+        message.channel.send('Its been' + " ```" + time2 + " " + 'minutes ``` since the walls were last checked.', {tts: false});
         }
 });
 
