@@ -13,7 +13,6 @@ sql.open("./score.sqlite");
 
 
 client.on('ready', () => {
-      setInterval(checkn, 100)
       
       function counter() {
             minutes += 1
@@ -26,14 +25,7 @@ client.on('ready', () => {
       client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
-      function checkn() {
-          if (minutes > 3) {
-                n = true
-          }
-          else {
-                n = false
-            }
-      }
+      
       function timeto() { 
                     
                   console.log('TRUE'); 
@@ -43,7 +35,7 @@ client.on('ready', () => {
             }
            
       function notify() { 
-                     if (minutes > 5) {
+                     if (minutes > 3) {
                            tag = '@everyone'
                      }
                      else {
