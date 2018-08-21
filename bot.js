@@ -16,6 +16,7 @@ client.on('ready', () => {
             minutes += 1
       }
       function restart() {
+            let minutes = 0
             setInterval(timeto, 60000);
             setInterval(counter, 60000);
             setInterval(notify, 1000);
@@ -49,7 +50,6 @@ client.on('message', message => {
     clearInterval(timeto);
     clearInterval(counter);
     clearInterval(notify);
-    let minutes = 0
     NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
     setTimeout(restart, 2000);
     
