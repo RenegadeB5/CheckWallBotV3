@@ -15,16 +15,16 @@ client.on('ready', () => {
       
       function clear1() {
             console.log('cleared');
-            clearInterval(Interval1);
-            clearInterval(Interval2);
-            clearInterval(Interval3);
+            clearInterval(interval1);
+            clearInterval(interval2);
+            clearInterval(interval3);
       }
       function restart() {
             console.log('restarted');
             let minutes = 0
-            var Interval1 = setInterval(timeto, 60000);
-            var Interval2 = setInterval(counter, 60000);
-            var Interval3 = setInterval(notify, 1000);
+            var interval1 = setInterval(timeto, 60000);
+            var interval2 = setInterval(counter, 60000);
+            var interval3 = setInterval(notify, 1000);
       }
       client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
       console.log('successfully Logged In As Wall Check Bot!');
