@@ -12,13 +12,6 @@ sql.open("./score.sqlite");
 
 client.on('ready', () => {
       
-      
-      function clear1() {
-            console.log('cleared');
-            clearInterval(interval1);
-            clearInterval(interval2);
-            clearInterval(interval3);
-      }
       function restart() {
             console.log('restarted');
             let minutes = 0
@@ -26,11 +19,18 @@ client.on('ready', () => {
             var interval2 = setInterval(counter, 60000);
             var interval3 = setInterval(notify, 1000);
       }
+      function clear1() {
+            console.log('cleared');
+            clearInterval(interval1);
+            clearInterval(interval2);
+            clearInterval(interval3);
+      }
+      
       client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       
-      restart();
+      setTimeout(restart, 100);
       
       function counter() {
             minutes += 1
