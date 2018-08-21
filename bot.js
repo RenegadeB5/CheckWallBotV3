@@ -4,10 +4,8 @@ const Discord = require('discord.js');
 var client = new Discord.Client();
 const prefix = ".";
 var lastTime;
-var int1;
 var NOTIFY_CHANNEL;
 var minutes = 0
-var n = false
 const sql = require("sqlite");
 sql.open("./score.sqlite");
 
@@ -28,7 +26,7 @@ client.on('ready', () => {
       
       function timeto() { 
                     
-                  console.log('TRUE'); 
+                  console.log(tag); 
                   let time2 = minutes + 1
                   message = tag + " " + 'The walls have not been checked in' + " " + time2 + " " + 'minutes.'
                   NOTIFY_CHANNEL.sendMessage(message)
@@ -52,7 +50,6 @@ client.on('message', message => {
     clearInterval(counter)
     clearInterval(notify)
     minutes = 0
-    n = false
     NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
     setTimeout(restart, 1000);
     
