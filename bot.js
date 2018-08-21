@@ -66,9 +66,7 @@ client.on('message', message => {
       }
       
       stop();
-      
-    
-       
+      setTimeout(start, 100);                 
   }   
 });
       
