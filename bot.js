@@ -56,7 +56,8 @@ client.on('message', message => {
   if (message.content == prefix + 'clear') {
     lastSender = message.guild.lastSender = message.author    
     NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
-    
+      
+      console.log(inter1);
       function stop() {
             console.log('cleared');
             clearInterval(inter1);
