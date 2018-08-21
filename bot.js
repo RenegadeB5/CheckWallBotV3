@@ -50,13 +50,13 @@ client.on('message', message => {
     lastSender = message.guild.lastSender = message.author    
     NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
     
-      function (stop) {
+      function stop() {
             console.log('cleared');
             clearInterval(inter1);
             clearInterval(inter2);
             clearInterval(inter3);
       }
-      function (start) {
+      function start() {
             console.log('restarted');
             let minutes = 0
             var inter1 = setInterval(timeto, 60000);
