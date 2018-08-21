@@ -21,15 +21,6 @@ client.on('ready', () => {
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       
-      start();
-      
-      function start() {
-            console.log('restarted');
-            let minutes = 0
-            var inter1 = setInterval(timeto, 60000);
-            var inter2 = setInterval(counter, 60000);
-            var inter3 = setInterval(notify, 1000);
-      }
       
       function counter() {
             minutes += 1
