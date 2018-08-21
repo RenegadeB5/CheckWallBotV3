@@ -16,9 +16,9 @@ client.on('ready', () => {
             minutes += 1
       }
       function restart() {
-            setInterval(timeto, 60000)
-            setInterval(counter, 60000)
-            setInterval(notify, 1000)
+            setInterval(timeto, 60000);
+            setInterval(counter, 60000);
+            setInterval(notify, 1000);
       }
       client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
       console.log('successfully Logged In As Wall Check Bot!');
@@ -46,12 +46,12 @@ client.on('ready', () => {
 client.on('message', message => {
   if (message.content == prefix + 'clear') {
     lastSender = message.guild.lastSender = message.author
-    clearInterval(timeto)
-    clearInterval(counter)
-    clearInterval(notify)
+    clearInterval(timeto);
+    clearInterval(counter);
+    clearInterval(notify);
     let minutes = 0
     NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
-    setTimeout(restart, 1000);
+    setTimeout(restart, 2000);
     
        
   }   
@@ -80,7 +80,6 @@ client.on ('message', message => {
 client.on ('message', message => {
   if (message.content === ".feedback") {
         console.log(minutes);
-        console.log(n);
         }
 });      
 
