@@ -15,25 +15,19 @@ sql.open("./score.sqlite");
 
 client.on('ready', () => {
       
-      function restart() {
+      
+      
+      client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
+      console.log('successfully Logged In As Wall Check Bot!');
+      NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
+      
+      function () {
             console.log('restarted');
             let minutes = 0
             var inter1 = setInterval(timeto, 60000);
             var inter2 = setInterval(counter, 60000);
             var inter3 = setInterval(notify, 1000);
       }
-      function clear1() {
-            console.log('cleared');
-            clearInterval(inter1);
-            clearInterval(inter2);
-            clearInterval(inter3);
-      }
-      
-      client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
-      console.log('successfully Logged In As Wall Check Bot!');
-      NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
-      
-      setTimeout(restart, 100);
       
       function counter() {
             minutes += 1
@@ -60,10 +54,22 @@ client.on('ready', () => {
 //CHECKED-----------------------------------------------------------------------
 client.on('message', message => {
   if (message.content == prefix + 'clear') {
-    lastSender = message.guild.lastSender = message.author
-    setTimeout(clear1, 100);
+    lastSender = message.guild.lastSender = message.author    
     NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
-    setTimeout(restart, 2000);
+    
+      function () {
+            console.log('cleared');
+            clearInterval(inter1);
+            clearInterval(inter2);
+            clearInterval(inter3);
+      }
+      function () {
+            console.log('restarted');
+            let minutes = 0
+            var inter1 = setInterval(timeto, 60000);
+            var inter2 = setInterval(counter, 60000);
+            var inter3 = setInterval(notify, 1000);
+      }
     
        
   }   
