@@ -14,6 +14,7 @@ client.on('ready', () => {
       
       
       function clear1() {
+            console.log('cleared');
             clearInterval(timeto);
             clearInterval(counter);
             clearInterval(notify);
