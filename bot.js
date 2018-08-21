@@ -46,11 +46,9 @@ client.on('ready', () => {
                   let time2 = minutes + 1
                   message = tag + " " + 'The walls have not been checked in' + " " + time2 + " " + 'minutes.'
                   NOTIFY_CHANNEL.sendMessage(message)
-            }
-           
-      
-      
-       }
+       }  
+      }
+       
 
 //CHECKED-----------------------------------------------------------------------
 client.on('message', message => {
