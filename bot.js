@@ -36,8 +36,9 @@ client.on('ready', () => {
       }
       function timeto() { 
                     
-                  console.log('TRUE');          
-                  message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
+                  console.log('TRUE'); 
+                  let time2 = minutes + 1
+                  message = tag + " " + 'The walls have not been checked in' + " " + time2 + " " + 'minutes.'
                   NOTIFY_CHANNEL.sendMessage(message)
             }
            
