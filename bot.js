@@ -21,7 +21,14 @@ client.on('ready', () => {
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       
-      
+      function start() {
+            console.log('restarted');
+            let minutes = 0
+            var inter1 = setInterval(timeto, 60000);
+            var inter2 = setInterval(counter, 60000);
+            var inter3 = setInterval(notify, 1000);
+      }
+      start();
       function counter() {
             minutes += 1
       }
@@ -56,15 +63,9 @@ client.on('message', message => {
             clearInterval(inter2);
             clearInterval(inter3);
       }
-      function start() {
-            console.log('restarted');
-            let minutes = 0
-            var inter1 = setInterval(timeto, 60000);
-            var inter2 = setInterval(counter, 60000);
-            var inter3 = setInterval(notify, 1000);
-      }
+      
       stop();
-      setTimeout(start, 100);
+      
     
        
   }   
