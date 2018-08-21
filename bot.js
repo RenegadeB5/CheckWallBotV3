@@ -33,6 +33,13 @@ client.on('ready', () => {
             minutes += 1
       }
       
+      function notify() { 
+                     if (minutes > 3) {
+                           tag = '@everyone'
+                     }
+                     else {
+                           tag = '@here'
+                     }
       function timeto() { 
                     
                   console.log(tag); 
@@ -41,13 +48,7 @@ client.on('ready', () => {
                   NOTIFY_CHANNEL.sendMessage(message)
             }
            
-      function notify() { 
-                     if (minutes > 3) {
-                           tag = '@everyone'
-                     }
-                     else {
-                           tag = '@here'
-                     }
+      
       
        }
 
