@@ -6,7 +6,7 @@ const prefix = ".";
 var lastTime;
 var int1;
 var NOTIFY_CHANNEL;
-var minutes = 1
+var minutes = 0
 var n = false
 const sql = require("sqlite");
 sql.open("./score.sqlite");
