@@ -59,8 +59,9 @@ client.on('ready', () => {
 
 client.on ('message', message => {  
   if (message.content === ".register") { 
-        if (message.guild.roles.find("name", * + message.author.id)) {
-              NOTIFY_CHANNEL.sendMessage('You are already registered');
+        let registeredRole = message.guild.roles.find("name", "Registered");
+        if (message.member.roles.has(registeredRole) {
+              NOTIFY_CHANNEL.sendMessage('You are already registered')
         }
         else { 
                 let addRole = '0' + message.author.id
@@ -68,6 +69,15 @@ client.on ('message', message => {
                    name: addRole,
                    color: 'BLUE',
               });
+              function addRoles() {
+                    let input = '0' + message.author.id
+                    let role = message.guild.roles.find("name", input);
+                    let role2 = message.guild.roles.find("name", "Registered");
+                    message.user.addRole(role, role2).catch(console.error);
+              }
+              setTimeout(addRoles, 1000);
+              NOTIFY_CHANNEL.sendMessage('You were successfully registered, now your points will be stored.'
+              }
         }
 }}); 
 
