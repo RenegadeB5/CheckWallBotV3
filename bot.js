@@ -59,7 +59,7 @@ client.on('ready', () => {
 
 client.on ('message', message => {  
   if (message.content === ".register") { 
-        if (message.guild.roles.find("name", .* + message.author.id)) {
+        if (message.guild.roles.find("name", * + message.author.id)) {
               NOTIFY_CHANNEL.sendMessage('You are already registered');
         }
         else { 
