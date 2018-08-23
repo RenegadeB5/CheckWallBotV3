@@ -61,14 +61,14 @@ client.on ('message', message => {
   if (message.content === ".register") { 
         let checkIf = message.guild.roles.find("name", "Registered");
         if (message.member.roles.has(checkIf.id)) {
-              NOTIFY_CHANNEL.sendMessage('You are already registered')
+              NOTIFY_CHANNEL.sendMessage('You are already registered.')
         }
           else { 
                 let addRole = '0 points' + ' ' + message.author.id
                 message.guild.createRole({
                    name: addRole,
                    color: 'BLUE',
-                   position: '3',
+                   role.setPosition(1),
               });
               function addRoles() {
                     let input = '0 points' + ' ' + message.author.id
