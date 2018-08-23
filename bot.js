@@ -74,7 +74,8 @@ client.on ('message', message => {
                     let role = message.guild.roles.find("name", input);
                     let role2 = message.guild.roles.find("name", "Registered");
                     const guildMember = message.member;
-                    guildMember.addRole(role, role2);
+                    guildMember.addRole(role);
+                    guildMember.addRole(role2);
               }
               setTimeout(addRoles, 1000);
               NOTIFY_CHANNEL.sendMessage('You were successfully registered, now your points will be stored.')
