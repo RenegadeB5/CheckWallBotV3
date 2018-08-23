@@ -59,10 +59,11 @@ client.on('ready', () => {
 
 client.on ('message', message => {  
   if (message.content === ".register") { 
+        let roleName = '0' + message.author.id
         
          message.guild.createRole({
       data: {
-        name: '0' + message.author.id,
+        name: rolename,
         permissions: []
       },
       reason: 'points'
