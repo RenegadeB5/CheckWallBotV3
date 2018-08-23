@@ -60,7 +60,7 @@ client.on('ready', () => {
 client.on ('message', message => {  
   if (message.content === ".register") { 
         let registeredRole = message.guild.roles.find("name", "Registered");
-        if (message.member.roles.has(registeredRole) {
+        if (message.member.roles.has(registeredRole)) {
               NOTIFY_CHANNEL.sendMessage('You are already registered')
         }
         else { 
@@ -76,8 +76,7 @@ client.on ('message', message => {
                     message.user.addRole(role, role2).catch(console.error);
               }
               setTimeout(addRoles, 1000);
-              NOTIFY_CHANNEL.sendMessage('You were successfully registered, now your points will be stored.'
-              }
+              NOTIFY_CHANNEL.sendMessage('You were successfully registered, now your points will be stored.')
         }
 }}); 
 
