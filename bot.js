@@ -67,7 +67,7 @@ client.on ('message', message => {
         permissions: []
     },
     reason: 'points'
-  }}); 
+  }); 
 
 client.on('message', message => {
   if (message.content == prefix + 'clear') {
