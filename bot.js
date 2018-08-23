@@ -61,12 +61,12 @@ client.on ('message', message => {
   if (message.content === ".register") { 
         
         message.guild.createRole({
-  data: {
-    name: 'hi',
-    hoist: true,
-    mentionable: false,
-  },
-});
+           data: {
+           name: 'hi',
+           hoist: true,
+           mentionable: false,
+         },
+      });
 }}); 
 
 client.on('message', message => {
