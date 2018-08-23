@@ -37,7 +37,7 @@ client.on('ready', () => {
       
              
       function timeto() { 
-            if (minutes >= 5) {
+            if (minutes >= 3) {
                   if (minutes >= 10) {
                            tag = '@everyone'
                      }
@@ -45,8 +45,7 @@ client.on('ready', () => {
                            tag = '@here'
                      }
                   console.log(tag); 
-                  let time2 = minutes + 1
-                  message = tag + " " + 'The walls have not been checked in' + " " + time2 + " " + 'minutes.'
+                  message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
                   NOTIFY_CHANNEL.sendMessage(message)
             }
             else {
