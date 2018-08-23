@@ -81,8 +81,10 @@ client.on ('message', message => {
                     const role = message.guild.roles.find(role => role.name.toLowerCase() === roleName);
                     const roleName = '0 points' + ' ' + message.author.id
                     role.get(role).setPosition(3)
+              }
               
               setTimeout(addRoles, 1000);
+              setTimeout(moveRole, 2000);
               NOTIFY_CHANNEL.sendMessage('You were successfully registered, now your points will be stored.')
           }
 }}); 
