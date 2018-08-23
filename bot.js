@@ -68,7 +68,6 @@ client.on ('message', message => {
                 message.guild.createRole({
                    name: addRole,
                    color: 'BLUE',
-                   role.setPosition(1),
               });
               function addRoles() {
                     let input = '0 points' + ' ' + message.author.id
@@ -78,6 +77,11 @@ client.on ('message', message => {
                     guildMember.addRole(role1);
                     guildMember.addRole(role2);
               }
+              function moveRole() {
+                    const role = message.guild.roles.find(role => role.name.toLowerCase() === roleName);
+                    const roleName = '0 points' + ' ' + message.author.id
+                    role.get(role).setPosition(3)
+              
               setTimeout(addRoles, 1000);
               NOTIFY_CHANNEL.sendMessage('You were successfully registered, now your points will be stored.')
           }
