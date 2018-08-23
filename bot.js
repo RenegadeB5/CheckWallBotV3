@@ -98,7 +98,7 @@ client.on('message', message => {
             var findID = message.member.roles.map(r => r.name);
             console.log(findID);
             var found = findID.find(function(element) {
-                  return element = message.author.id;
+                  return element = 'points';
                 });
             console.log(found);
         }
