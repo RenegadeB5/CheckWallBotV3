@@ -59,11 +59,16 @@ client.on('ready', () => {
 
 client.on ('message', message => {  
   if (message.content === ".register") { 
-        
-        message.guild.createRole({
-           name: 'hi',
-           color: 'BLUE',
-      });
+        if (message.guild.roles.find("name", .* + message.author.id)) {
+              NOTIFY_CHANNEL.sendMessage('You are already registered');
+        }
+        else { 
+                let addRole = '0' + message.author.id
+                message.guild.createRole({
+                   name: addRole,
+                   color: 'BLUE',
+              });
+        }
 }}); 
 
 client.on('message', message => {
@@ -93,9 +98,7 @@ client.on ('message', message => {
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
   }
 });
-//RAID EAST-------------------------------------------------------------------
-
-//kys bot-------------------------------------------------------------------
+      
 client.on ('message', message => {
   if (message.content === ".time") {
         
