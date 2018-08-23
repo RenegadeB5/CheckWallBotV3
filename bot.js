@@ -96,7 +96,11 @@ client.on('message', message => {
             lastSender = message.guild.lastSender = message.author    
             NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls and has gained 1 point.')
             var findID = message.member.roles.map(r => r.name);
-              console.log(findID);
+            console.log(findID);
+            var found = findID.find(function(element) {
+                  return element = message.author.id;
+                });
+            console.log(found);
         }
         else {
               lastSender = message.guild.lastSender = message.author    
