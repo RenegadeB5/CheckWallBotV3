@@ -62,13 +62,13 @@ client.on ('message', message => {
         let roleName = message.author.id
         console.log(roleName);
         
-         message.guild.createRole({
-      data: {
-        name: roleName,
-        permissions: []
-      },
-      reason: 'points'
-})
+        message.guild.createRole({
+  data: {
+    name: roleName,
+    hoist: true,
+    mentionable: false,
+  },
+});
 }}); 
 
 client.on('message', message => {
