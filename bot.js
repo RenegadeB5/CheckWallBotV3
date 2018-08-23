@@ -78,9 +78,9 @@ client.on ('message', message => {
                     guildMember.addRole(role2);
               }
               function moveRole() {
-                    const roleName = '0 points' + ' ' + message.author.id
-                    const role = message.guild.roles.find(role => role.name.toLowerCase() === roleName);
-                    roles.get(role).setPosition(3)
+                    let move = '0 points' + ' ' + message.author.id
+                    let role = message.guild.roles.find("name", move);
+                    role.setPosition(3)
               }
               
               setTimeout(addRoles, 1000);
