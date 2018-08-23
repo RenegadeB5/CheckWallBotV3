@@ -8,7 +8,6 @@ var NOTIFY_CHANNEL;
 var minutes = 0
 var inter1;
 var inter2;
-var inter3;
 const sql = require("sqlite");
 sql.open("./score.sqlite");
 
@@ -26,26 +25,29 @@ client.on('ready', () => {
             let minutes = 0
             inter1 = setInterval(timeto, 60000);
             inter2 = setInterval(counter, 60000);
-            inter3 = setInterval(notify, 1000);
       }
       start();
       function counter() {
             minutes += 1
       }
       
-      function notify() { 
-                     if (minutes > 3) {
+             
+      function timeto() { 
+            if (minutes > 3) {
+                  if (minutes > 5) {
                            tag = '@everyone'
                      }
                      else {
                            tag = '@here'
                      }
-      function timeto() { 
-                    
                   console.log(tag); 
                   let time2 = minutes + 1
                   message = tag + " " + 'The walls have not been checked in' + " " + time2 + " " + 'minutes.'
                   NOTIFY_CHANNEL.sendMessage(message)
+            }
+            else {
+                  return;
+            }
        }  
       }
        
@@ -61,7 +63,6 @@ client.on('message', message => {
             console.log('cleared');
             clearInterval(inter1);
             clearInterval(inter2);
-            clearInterval(inter3);
       }
       
       stop();
