@@ -62,7 +62,7 @@ client.on ('message', message => {
         
         message.guild.createRole({
   data: {
-    name: 'message.author.id',
+    name: 'hi',
     hoist: true,
     mentionable: false,
   },
