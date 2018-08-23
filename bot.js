@@ -91,19 +91,28 @@ client.on ('message', message => {
 
 client.on('message', message => {
   if (message.content == prefix + 'clear') {
-    lastSender = message.guild.lastSender = message.author    
-    NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls.')
+        let checkIf = message.guild.roles.find("name", "Registered");
+        if (message.member.roles.has(checkIf.id)) {
+            lastSender = message.guild.lastSender = message.author    
+            NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls and has gained 1 point.')
+            let value = message.author.id
+            console.log(message.guild.roles.find(r => r.property === value));
+        }
+        else {
+              lastSender = message.guild.lastSender = message.author    
+            NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls, but isnt registered.')
+        }
       
-      console.log(inter1);
-      function stop() {
-            console.log('cleared');
-            clearInterval(inter1);
-            clearInterval(inter2);
-      }
+               console.log(inter1);
+               function stop() {
+                       console.log('cleared');
+                       clearInterval(inter1);
+                       clearInterval(inter2);
+               }
       
-      stop();
-      setTimeout(start, 100);                 
-  }   
+                stop();
+              setTimeout(start, 100);                 
+             }           
 });
       
 //RAID ------------------------------------------------------------------
