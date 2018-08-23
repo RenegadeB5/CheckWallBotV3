@@ -60,14 +60,14 @@ client.on('ready', () => {
 client.on ('message', message => {  
   if (message.content === ".register") { 
         
-      message.guild.createRole({
-    data: {
-        name: '0' + message.author.id,
-        color: args[0],
-        permissions: []
-    },
-    reason: 'points'
-  }); 
+         message.guild.createRole({
+       data: {
+           name: '0' + message.author.id,
+           color: args[0],
+           permissions: []
+       },
+       reason: 'points'
+}}); 
 
 client.on('message', message => {
   if (message.content == prefix + 'clear') {
