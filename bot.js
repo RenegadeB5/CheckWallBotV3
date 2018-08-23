@@ -68,13 +68,14 @@ client.on ('message', message => {
                 message.guild.createRole({
                    name: addRole,
                    color: 'BLUE',
+                   position: '3',
               });
               function addRoles() {
                     let input = '0 points' + ' ' + message.author.id
-                    let role = message.guild.roles.find("name", input);
+                    let role1 = message.guild.roles.find("name", input);
                     let role2 = message.guild.roles.find("name", "Registered");
                     const guildMember = message.member;
-                    guildMember.addRole(role);
+                    guildMember.addRole(role1);
                     guildMember.addRole(role2);
               }
               setTimeout(addRoles, 1000);
