@@ -63,7 +63,6 @@ client.on ('message', message => {
       message.guild.createRole({
                 data: {
                     name: '0' + message.author.id,
-                    color: args[0],
                     permissions: []
                 },
                reason: 'Points'
