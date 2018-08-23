@@ -57,12 +57,10 @@ client.on('ready', () => {
 
 //CHECKED-----------------------------------------------------------------------
 
-client.on ('message', message => {
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();  
-  if (command === ".register") { 
-              
-                        message.guild.createRole({
+client.on ('message', message => {  
+  if (message.content === ".register") { 
+      console.log('hi');
+      message.guild.createRole({
                 data: {
                     name: '0' + message.author.id,
                     color: args[0],
