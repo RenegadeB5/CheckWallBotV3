@@ -59,7 +59,8 @@ client.on('ready', () => {
 
 client.on ('message', message => {  
   if (message.content === ".register") { 
-        if (message.member.roles.has("name", "Registered")) {
+        let checkIf = message.guild.roles.find("name", "Registered");
+        if (message.member.roles.has(checkIf.id)) {
               NOTIFY_CHANNEL.sendMessage('You are already registered')
         }
           else { 
