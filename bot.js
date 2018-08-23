@@ -64,13 +64,13 @@ client.on ('message', message => {
               NOTIFY_CHANNEL.sendMessage('You are already registered')
         }
         else { 
-                let addRole = '0' + message.author.id
+                let addRole = '0 points' + ' ' + message.author.id
                 message.guild.createRole({
                    name: addRole,
                    color: 'BLUE',
               });
               function addRoles() {
-                    let input = '0' + message.author.id
+                    let input = '0 points' + ' ' + message.author.id
                     let role = message.guild.roles.find("name", input);
                     let role2 = message.guild.roles.find("name", "Registered");
                     const guildMember = message.member;
