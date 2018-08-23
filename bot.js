@@ -37,8 +37,8 @@ client.on('ready', () => {
       
              
       function timeto() { 
-            if (minutes > 4) {
-                  if (minutes > 9) {
+            if (minutes > 5) {
+                  if (minutes > 10) {
                            tag = '@everyone'
                      }
                      else {
