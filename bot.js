@@ -59,18 +59,14 @@ client.on('ready', () => {
 
 client.on ('message', message => {  
   if (message.content === ".register") { 
-      console.log('hi');
+        
       message.guild.createRole({
-                data: {
-                    name: '0' + message.author.id,
-                    permissions: []
-                },
-               reason: 'Points'
-            })
-      console.log('role created');
-      let role = '0' + message.author.id         
-      member.addRole(role).catch(console.error);
-      Guild.setRolePosition('0' + message.author.id, 2)
+    data: {
+        name: '0' + message.author.id,
+        color: args[0],
+        permissions: []
+    },
+    reason: 'points'
   }}); 
 
 client.on('message', message => {
