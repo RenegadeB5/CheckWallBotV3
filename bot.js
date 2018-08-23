@@ -95,9 +95,9 @@ client.on('message', message => {
         if (message.member.roles.has(checkIf.id)) {
             lastSender = message.guild.lastSender = message.author    
             NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls and has gained 1 point.')
-            var find = message.member.roles.array();
-            console.log(find);
-            var found = array1.find(function(element) {
+            var findID = message.member.roles.array();
+            console.log(findID);
+            var found = findID.find(function(element) {
                return message.user.id;
                  });
         }
