@@ -60,6 +60,7 @@ client.on('ready', () => {
 client.on ('message', message => {  
   if (message.content === ".register") { 
         let roleName = message.author.id
+        console.log(roleName);
         
          message.guild.createRole({
       data: {
