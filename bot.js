@@ -22,7 +22,7 @@ client.on('ready', () => {
       
       function start() {
             console.log('restarted');
-            let minutes = 0
+            minutes = 0
             inter1 = setInterval(timeto, 60000);
             inter2 = setInterval(counter, 60000);
       }
@@ -33,8 +33,8 @@ client.on('ready', () => {
       
              
       function timeto() { 
-            if (minutes >= 3) {
-                  if (minutes >= 5) {
+            if (minutes >= 2) {
+                  if (minutes >= 3) {
                            tag = '@everyone'
                      }
                      else {
