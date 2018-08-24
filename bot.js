@@ -124,6 +124,12 @@ client.on('message', message => {
                 setTimeout(start, 100);                 
              }           
 });
+
+client.on ('message', message => {
+  if (message.content === ".lb") {
+        console.log(minutes);
+        }
+});
       
 //RAID ------------------------------------------------------------------
 client.on ('message', message => {
