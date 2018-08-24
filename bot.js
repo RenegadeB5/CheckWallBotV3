@@ -97,6 +97,7 @@ client.on('message', message => {
             NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls and has gained 1 point.')
             var findID = message.member.roles.map(r => r.name);
             const found1 = findID.filter(word => word.length > 26);
+            found1.toString();
             console.log(found1);
         }
         else {
