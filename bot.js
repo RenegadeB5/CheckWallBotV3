@@ -16,7 +16,6 @@ sql.open("./score.sqlite");
 client.on('ready', () => {
       
       
-      let gain = true;
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       
@@ -25,6 +24,7 @@ client.on('ready', () => {
       }
       
       function start() {
+            gain = false;
             minutes = 0
             inter2 = setInterval(counter, 60000);
             setTimeout(late, 1000);
@@ -43,7 +43,7 @@ client.on('ready', () => {
                      else {
                            tag = '@here'
                      }
-                  let gain = true;
+                  let gain = true
                   client.user.setStatus('idle')
                   client.user.setPresence({ game: { name: 'Check walls.', type: 0 } });
                   message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
@@ -124,7 +124,7 @@ client.on('message', message => {
                        clearInterval(inter1);
                        clearInterval(inter2);
                }
-                let gain = false;
+                gain = false
                 client.user.setStatus('online')
                 client.user.setPresence({ game: { name: 'The walls are safe.', type: 0 } });
                 stop();
