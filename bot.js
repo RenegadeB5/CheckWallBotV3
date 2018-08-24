@@ -138,8 +138,8 @@ client.on('message', message => {
 client.on ('message', message => {
   if (message.content === ".lb") {
         var findID = message.guild.roles.map(r => r.name);
-        const found1 = findID.filter(word => word.length > 26);
-        console.log(found1);
+        const lb1 = findID.filter(word => word.length > 26);
+        console.log(lb1);
         }
 });
       
