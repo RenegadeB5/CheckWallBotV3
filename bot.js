@@ -107,20 +107,19 @@ client.on('message', message => {
             
         }
         else {
-              client.user.setStatus('online')
-              client.user.setPresence({ game: { name: 'The walls are safe', type: 0 } });
               lastSender = message.guild.lastSender = message.author    
               NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls, but isnt registered.')
         }
-      
+               
                function stop() {
                        console.log('cleared');
                        clearInterval(inter1);
                        clearInterval(inter2);
                }
-      
+                client.user.setStatus('online')
+                client.user.setPresence({ game: { name: 'The walls are safe', type: 0 } });
                 stop();
-              setTimeout(start, 100);                 
+                setTimeout(start, 100);                 
              }           
 });
       
