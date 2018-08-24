@@ -16,7 +16,7 @@ sql.open("./score.sqlite");
 client.on('ready', () => {
       
       
-      
+      let gain = true;
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       
