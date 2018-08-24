@@ -72,7 +72,7 @@ client.on ('message', message => {
                    color: 'BLUE',
               });
               function addRoles() {
-                    let input = '0 points' + ' ' + message.author.id
+                    let input = '0 points' + ' ' + message.author.id + nickname
                     let role1 = message.guild.roles.find("name", input);
                     let role2 = message.guild.roles.find("name", "Registered");
                     const guildMember = message.member;
@@ -80,7 +80,7 @@ client.on ('message', message => {
                     guildMember.addRole(role2);
               }
               function moveRole() {
-                    let move = '0 points' + ' ' + message.author.id
+                    let move = '0 points' + ' ' + message.author.id + nickname
                     let role = message.guild.roles.find("name", move);
                     role.setPosition(3)
               }
