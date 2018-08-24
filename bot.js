@@ -42,7 +42,7 @@ client.on('ready', () => {
                      else {
                            tag = '@here'
                      }
-                  let gain = true
+                  canAdd = true
                   client.user.setStatus('idle')
                   client.user.setPresence({ game: { name: 'Check walls.', type: 0 } });
                   message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
