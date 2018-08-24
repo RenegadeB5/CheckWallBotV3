@@ -35,6 +35,8 @@ client.on('ready', () => {
       
              
       function timeto() { 
+            client.user.setStatus('away')
+            client.user.setPresence({ game: { name: 'Check walls.', type: 0 } });
             if (minutes >= 3) {
                   if (minutes >= 10) {
                            tag = '@everyone'
@@ -117,7 +119,7 @@ client.on('message', message => {
                        clearInterval(inter2);
                }
                 client.user.setStatus('online')
-                client.user.setPresence({ game: { name: 'The walls are safe', type: 0 } });
+                client.user.setPresence({ game: { name: 'The walls are safe.', type: 0 } });
                 stop();
                 setTimeout(start, 100);                 
              }           
