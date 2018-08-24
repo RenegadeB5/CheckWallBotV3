@@ -35,8 +35,6 @@ client.on('ready', () => {
       
              
       function timeto() { 
-            client.user.setStatus('idle')
-            client.user.setPresence({ game: { name: 'Check walls.', type: 0 } });
             if (minutes >= 3) {
                   if (minutes >= 10) {
                            tag = '@everyone'
@@ -44,6 +42,8 @@ client.on('ready', () => {
                      else {
                            tag = '@here'
                      }
+                  client.user.setStatus('idle')
+                  client.user.setPresence({ game: { name: 'Check walls.', type: 0 } });
                   message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
                   NOTIFY_CHANNEL.sendMessage(message)
             }
