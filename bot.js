@@ -67,13 +67,13 @@ client.on ('message', message => {
         }
           else { 
                 let nickname = args.slice(0).join(" "); 
-                let addRole = '0 points' + ' ' + message.author.id + nickname
+                let addRole = '0 points' + ' ' + message.author.id + ' ' + nickname
                 message.guild.createRole({
                    name: addRole,
                    color: 'BLUE',
               });
               function addRoles() {
-                    let input = '0 points' + ' ' + message.author.id + nickname
+                    let input = '0 points' + ' ' + message.author.id + ' ' + nickname
                     let role1 = message.guild.roles.find("name", input);
                     let role2 = message.guild.roles.find("name", "Registered");
                     const guildMember = message.member;
@@ -81,7 +81,7 @@ client.on ('message', message => {
                     guildMember.addRole(role2);
               }
               function moveRole() {
-                    let move = '0 points' + ' ' + message.author.id + nickname
+                    let move = '0 points' + ' ' + message.author.id + ' ' + nickname
                     let role = message.guild.roles.find("name", move);
                     role.setPosition(3)
               }
