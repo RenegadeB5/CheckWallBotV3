@@ -104,7 +104,7 @@ client.on('message', message => {
             let newName = points + ' ' + 'points' + ' ' + message.author.id
             let input = chars + ' ' + 'points' + ' ' + message.author.id
             let role = message.guild.roles.find("name", input);
-            console.log(found3);
+            role.setName(newName);
             
         }
         else {
