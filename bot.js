@@ -58,13 +58,14 @@ client.on('ready', () => {
 //CHECKED-----------------------------------------------------------------------
 
 client.on ('message', message => {  
-  if (message.content === ".register") { 
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  if (command === "register") { 
         let checkIf = message.guild.roles.find("name", "Registered");
         if (message.member.roles.has(checkIf.id)) {
               NOTIFY_CHANNEL.sendMessage('You are already registered.')
         }
           else { 
-                const args = message.content.slice(prefix.length).trim().split(/ +/g);
                 let nickname = args.slice(0).join(" "); 
                 let addRole = '0 points' + ' ' + message.author.id + nickname
                 message.guild.createRole({
