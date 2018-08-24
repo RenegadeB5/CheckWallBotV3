@@ -104,7 +104,7 @@ client.on('message', message => {
                       found1.toString();
                       var found2 = found1[0]
                       var found3 = found2.split(' ');
-                      var nick = found[3]
+                      var nick = found3[3]
                       var chars = Number(found3[0]);
                       var points = chars + 1
                       let newName = points + ' ' + 'points' + ' ' + message.author.id
