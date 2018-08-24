@@ -8,6 +8,7 @@ var NOTIFY_CHANNEL;
 var minutes = 0
 var inter1;
 var inter2;
+var gain = true;
 const sql = require("sqlite");
 sql.open("./score.sqlite");
 
@@ -35,13 +36,14 @@ client.on('ready', () => {
       
              
       function timeto() { 
-            if (minutes >= 3) {
+            if (minutes >= 2) {
                   if (minutes >= 10) {
                            tag = '@everyone'
                      }
                      else {
                            tag = '@here'
                      }
+                  gain = true
                   client.user.setStatus('idle')
                   client.user.setPresence({ game: { name: 'Check walls.', type: 0 } });
                   message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
@@ -92,20 +94,25 @@ client.on('message', message => {
   if (message.content == prefix + 'clear') {
         let checkIf = message.guild.roles.find("name", "Registered");
         if (message.member.roles.has(checkIf.id)) {
-            lastSender = message.guild.lastSender = message.author    
-            NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls and has gained 1 point.')
-            var findID = message.member.roles.map(r => r.name);
-            const found1 = findID.filter(word => word.length > 26);
-            found1.toString();
-            var found2 = found1[0]
-            var found3 = found2.split(' ', 1);
-            var chars = Number(found3);
-            var points = chars + 1
-            let newName = points + ' ' + 'points' + ' ' + message.author.id
-            let input = chars + ' ' + 'points' + ' ' + message.author.id
-            let role = message.guild.roles.find("name", input);
-            role.setName(newName);
-            
+              if (gain = true) {
+                      lastSender = message.guild.lastSender = message.author    
+                      NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls and has gained 1 point.')
+                      var findID = message.member.roles.map(r => r.name);
+                      const found1 = findID.filter(word => word.length > 26);
+                      found1.toString();
+                      var found2 = found1[0]
+                      var found3 = found2.split(' ', 1);
+                      var chars = Number(found3);
+                      var points = chars + 1
+                      let newName = points + ' ' + 'points' + ' ' + message.author.id
+                      let input = chars + ' ' + 'points' + ' ' + message.author.id
+                      let role = message.guild.roles.find("name", input);
+                      role.setName(newName);
+              }
+              else {
+                    lastSender = message.guild.lastSender = message.author    
+                    NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls but hasnt gained a point.')
+              }            
         }
         else {
               lastSender = message.guild.lastSender = message.author    
@@ -117,6 +124,7 @@ client.on('message', message => {
                        clearInterval(inter1);
                        clearInterval(inter2);
                }
+                gain = false
                 client.user.setStatus('online')
                 client.user.setPresence({ game: { name: 'The walls are safe.', type: 0 } });
                 stop();
