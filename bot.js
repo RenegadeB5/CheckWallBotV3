@@ -8,7 +8,6 @@ var NOTIFY_CHANNEL;
 var minutes = 0
 var inter1;
 var inter2;
-var gain;
 const sql = require("sqlite");
 sql.open("./score.sqlite");
 
@@ -24,7 +23,7 @@ client.on('ready', () => {
       }
       
       function start() {
-            gain = false;
+            canAdd = false;
             minutes = 0
             inter2 = setInterval(counter, 60000);
             setTimeout(late, 1000);
@@ -94,7 +93,7 @@ client.on('message', message => {
   if (message.content == prefix + 'clear') {
         let checkIf = message.guild.roles.find("name", "Registered");
         if (message.member.roles.has(checkIf.id)) {
-              if (gain === true) {
+              if (canAdd === true) {
                       lastSender = message.guild.lastSender = message.author    
                       NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls and has gained 1 point.')
                       var findID = message.member.roles.map(r => r.name);
@@ -124,7 +123,7 @@ client.on('message', message => {
                        clearInterval(inter1);
                        clearInterval(inter2);
                }
-                gain = false
+                canAdd = false
                 client.user.setStatus('online')
                 client.user.setPresence({ game: { name: 'The walls are safe.', type: 0 } });
                 stop();
