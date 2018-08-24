@@ -98,8 +98,7 @@ client.on('message', message => {
             var findID = message.member.roles.map(r => r.name);
             const found1 = findID.filter(word => word.length > 26);
             found1.toString();
-            let found2 = found1.split(' ').join(',')
-            console.log(found2);
+            console.log(found1[0]);
         }
         else {
               lastSender = message.guild.lastSender = message.author    
