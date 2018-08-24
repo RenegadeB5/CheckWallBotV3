@@ -43,7 +43,7 @@ client.on('ready', () => {
                      else {
                            tag = '@here'
                      }
-                  gain = true
+                  let gain = true;
                   client.user.setStatus('idle')
                   client.user.setPresence({ game: { name: 'Check walls.', type: 0 } });
                   message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
@@ -124,7 +124,7 @@ client.on('message', message => {
                        clearInterval(inter1);
                        clearInterval(inter2);
                }
-                gain = false
+                let gain = false;
                 client.user.setStatus('online')
                 client.user.setPresence({ game: { name: 'The walls are safe.', type: 0 } });
                 stop();
