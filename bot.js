@@ -64,7 +64,9 @@ client.on ('message', message => {
               NOTIFY_CHANNEL.sendMessage('You are already registered.')
         }
           else { 
-                let addRole = '0 points' + ' ' + message.author.id
+                const args = message.content.slice(prefix.length).trim().split(/ +/g);
+                let nickname = args.slice(0).join(" "); 
+                let addRole = '0 points' + ' ' + message.author.id + nickname
                 message.guild.createRole({
                    name: addRole,
                    color: 'BLUE',
