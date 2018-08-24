@@ -94,7 +94,7 @@ client.on('message', message => {
   if (message.content == prefix + 'clear') {
         let checkIf = message.guild.roles.find("name", "Registered");
         if (message.member.roles.has(checkIf.id)) {
-              if (gain = true) {
+              if (gain === true) {
                       lastSender = message.guild.lastSender = message.author    
                       NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls and has gained 1 point.')
                       var findID = message.member.roles.map(r => r.name);
