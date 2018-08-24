@@ -35,7 +35,7 @@ client.on('ready', () => {
       
              
       function timeto() { 
-            client.user.setStatus('away')
+            client.user.setStatus('idle')
             client.user.setPresence({ game: { name: 'Check walls.', type: 0 } });
             if (minutes >= 3) {
                   if (minutes >= 10) {
