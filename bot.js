@@ -98,14 +98,14 @@ client.on('message', message => {
             const found1 = findID.filter(word => word.length > 26);
             found1.toString();
             var found2 = found1[0]
-            var found3 = found2.split(' ').join(',');
+            var found3 = found2.split(' ')
             var found4 = found3[0]
             var chars = Number(found4);
             var points = chars + 1
             let newName = points + ' ' + 'points' + ' ' + message.author.id
             let input = chars + ' ' + 'points' + ' ' + message.author.id
             let role = message.guild.roles.find("name", input);
-            role.setName(newName);
+            console.log(found3);
             
         }
         else {
