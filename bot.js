@@ -107,6 +107,7 @@ client.on('message', message => {
             
         }
         else {
+              client.user.setStatus('online')
               client.user.setPresence({ game: { name: 'The walls are safe', type: 0 } });
               lastSender = message.guild.lastSender = message.author    
               NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls, but isnt registered.')
@@ -126,6 +127,7 @@ client.on('message', message => {
 //RAID ------------------------------------------------------------------
 client.on ('message', message => {
   if (message.content === prefix + "weewoo") {
+    client.user.setStatus('dnd')
     client.user.setPresence({ game: { name: 'We are being raided!', type: 0 } });
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
