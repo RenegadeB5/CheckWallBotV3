@@ -98,7 +98,11 @@ client.on('message', message => {
             found1.toString();
             var found2 = found1[0]
             var chars = found2.split('');
-            console.log(chars[0]);
+            var points = chars += 1
+            let newName = points + ' ' + 'points' + ' ' + message.author.id
+            let input = chars + ' ' + 'points' + ' ' + message.author.id
+            let role = message.guild.roles.find("name", input);
+            role.setName(newName)
         }
         else {
               lastSender = message.guild.lastSender = message.author    
