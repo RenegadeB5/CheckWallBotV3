@@ -16,7 +16,6 @@ client.on('ready', () => {
       
       
       
-      client.user.setPresence({ game: { name: process.env.playing, type: 0 } });
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       
@@ -108,8 +107,9 @@ client.on('message', message => {
             
         }
         else {
+              client.user.setPresence({ game: { name: 'The walls are safe', type: 0 } });
               lastSender = message.guild.lastSender = message.author    
-            NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls, but isnt registered.')
+              NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls, but isnt registered.')
         }
       
                function stop() {
@@ -126,6 +126,7 @@ client.on('message', message => {
 //RAID ------------------------------------------------------------------
 client.on ('message', message => {
   if (message.content === prefix + "weewoo") {
+    client.user.setPresence({ game: { name: 'We are being raided!', type: 0 } });
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
