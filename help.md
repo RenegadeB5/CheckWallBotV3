@@ -10,12 +10,8 @@ Help page.
 
 
 
-.raid <direction> = Alerts everyone that we are being raided.
+.weewoo = Alerts everyone that we are being raided.
 
 
 
-.koth = Alerts everyone of an upcoming/ongoing koth.
-
-
-
-.castle = Alerts everyone that the castle is being contested.
+.register = Varifies your account to revieve points.
