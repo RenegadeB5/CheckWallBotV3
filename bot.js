@@ -25,7 +25,6 @@ client.on('ready', () => {
       }
       
       function start() {
-            console.log('restarted');
             minutes = 0
             inter2 = setInterval(counter, 60000);
             setTimeout(late, 1000);
@@ -44,7 +43,6 @@ client.on('ready', () => {
                      else {
                            tag = '@here'
                      }
-                  console.log(tag); 
                   message = tag + " " + 'The walls have not been checked in' + " " + minutes + " " + 'minutes.'
                   NOTIFY_CHANNEL.sendMessage(message)
             }
@@ -98,7 +96,8 @@ client.on('message', message => {
             var findID = message.member.roles.map(r => r.name);
             const found1 = findID.filter(word => word.length > 26);
             found1.toString();
-            console.log(found1[0]);
+            found2 = found1[0]
+            console.log(typeof found2);
         }
         else {
               lastSender = message.guild.lastSender = message.author    
