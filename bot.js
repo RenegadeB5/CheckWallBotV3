@@ -103,7 +103,7 @@ client.on('message', message => {
                 setTimeout(cool, 60000);
           }
           if (coold === true) {
-                NOTIFY_CHANNEL.sendMessage('Woah slow down buddy');
+                NOTIFY_CHANNEL.sendMessage('Woah slow down buddy.');
           }
           else { 
              coold = true
