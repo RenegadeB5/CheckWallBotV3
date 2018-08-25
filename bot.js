@@ -167,6 +167,7 @@ client.on ('message', message => {
   if (message.content === prefix + "weewoo") {
     client.user.setStatus('dnd')
     client.user.setPresence({ game: { name: 'We are being raided!', type: 0 } });
+    canAdd = true
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
     NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
