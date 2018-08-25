@@ -142,7 +142,10 @@ client.on ('message', message => {
         console.log(lb1);
         for (var i in lb1) {
             let lb2 = lb1[i].split(' ').join(',');
-            console.log(lb2);
+            let point = lb2[0]
+            let nick2 = lb2[3]
+            console.log(point);
+            console.log(nick2);
         }
         
         }
