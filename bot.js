@@ -149,8 +149,9 @@ client.on ('message', message => {
             singleObj['points'] = point;
             singleObj['nickname'] = nick2;
             lb.push(singleObj);
-            console.log(lb);
         }
+        lb.sort();
+        console.log(lb);
         
         }
 });
