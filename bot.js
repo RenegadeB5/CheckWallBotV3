@@ -139,7 +139,6 @@ client.on ('message', message => {
   if (message.content === ".lb") {
         var findID = message.guild.roles.map(r => r.name);
         const lb1 = findID.filter(word => word.length > 26);
-        console.log(lb1);
         let lb = [ ];
         for (var i in lb1) {
             let lb2 = lb1[i].split(' ');
@@ -154,13 +153,12 @@ client.on ('message', message => {
         let lbF = lb.sort(function(a, b){                            
                         return b.points-a.points;
                   })
-        console.log(lbF);
         for (var i in lbF) {
-              let lbmessage = Number(lbF[i].points) + lbF[i].nick2
+              let lbmessage = Number(lbF[i].points) + lbF[i].nickname
               NOTIFY_CHANNEL.sendMessage(lbmessage);
               console.log(lbmessage);
               console.log(lbF[i].points);
-              console.log(lbF[i].nick2);
+              console.log(lbF[i].nickname);
         }
         }
 });
