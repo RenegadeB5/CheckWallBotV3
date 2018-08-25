@@ -18,13 +18,13 @@ client.on('ready', () => {
       
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
+      coold = false;
       
       function late() {
               inter1 = setInterval(timeto, 60000);
       }
       
       function start() {
-            coold = false;
             canAdd = false;
             minutes = 0
             inter2 = setInterval(counter, 60000);
@@ -106,7 +106,7 @@ client.on('message', message => {
                 NOTIFY_CHANNEL.sendMessage('Woah slow down buddy');
           }
           else { 
-             var coold = true
+             coold = true
              cooldown();     
              let checkIf = message.guild.roles.find("name", "Registered");
              if (message.member.roles.has(checkIf.id)) {
