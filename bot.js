@@ -97,7 +97,6 @@ client.on ('message', message => {
 client.on('message', message => {
    if (message.content == prefix + 'clear') {
           function cooldown() {
-                coold = true
                 function cool() {
                       coold = false
                 }
@@ -107,6 +106,7 @@ client.on('message', message => {
                 NOTIFY_CHANNEL.sendMessage('Woah slow down buddy');
           }
           else { 
+             var coold = true
              cooldown();     
              let checkIf = message.guild.roles.find("name", "Registered");
              if (message.member.roles.has(checkIf.id)) {
@@ -172,8 +172,8 @@ client.on ('message', message => {
         for (var i in lbF) {
                let lbmessage = Number(lbF[i].points) + ' ' + 'points:' + ' ' + lbF[i].nickname
                NOTIFY_CHANNEL.sendMessage(lbmessage);
-        }
-        }
+        }        
+  }
 });
       
 //RAID ------------------------------------------------------------------
