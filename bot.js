@@ -143,7 +143,7 @@ client.on ('message', message => {
         let lb = [ ];
         for (var i in lb1) {
             let lb2 = lb1[i].split(' ');
-            let point = Number[0]
+            let point = Number(lb2[0]);
             let nick2 = lb2[3]
             var singleObj = {}
             singleObj['points'] = point;
