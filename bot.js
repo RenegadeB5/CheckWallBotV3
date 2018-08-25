@@ -151,8 +151,7 @@ client.on ('message', message => {
             lb.push(singleObj);
         }
         lb.sort(function(a, b){
-            let lbF = a.points-b.points
-            console.log(lbF);
+            console.log(a.points-b.points);
         })
         
         }
