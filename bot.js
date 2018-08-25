@@ -139,8 +139,15 @@ client.on ('message', message => {
   if (message.content === ".lb") {
         var findID = message.guild.roles.map(r => r.name);
         const lb1 = findID.filter(word => word.length > 26);
-        var lb2 = lb1.sort(function(a, b){return b-a});
-        console.log(lb2);
+        for (var i in lb1) {
+           var lb2 = i.split(' ');
+           var nick2 = i[3]
+           var points2 = Number(i[0]);
+           console.log(nick2);
+           console.log(points2);
+           console.log(lb2);
+        }
+        
         }
 });
       
