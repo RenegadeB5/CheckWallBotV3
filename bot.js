@@ -151,7 +151,7 @@ client.on ('message', message => {
             lb.push(singleObj);
         }
         lb.sort(function(a, b){
-            console.log(a.points-b.points);
+            return a.points-b.points
         })
         
         }
