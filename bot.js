@@ -24,6 +24,7 @@ client.on('ready', () => {
       }
       
       function start() {
+            coold = false;
             canAdd = false;
             minutes = 0
             inter2 = setInterval(counter, 60000);
@@ -94,47 +95,59 @@ client.on ('message', message => {
 }}); 
 
 client.on('message', message => {
-  if (message.content == prefix + 'clear') {
-        let checkIf = message.guild.roles.find("name", "Registered");
-        if (message.member.roles.has(checkIf.id)) {
-              if (canAdd === true) {
-                      lastSender = message.guild.lastSender = message.author    
-                      NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls and has gained 1 point.')
-                      var findID = message.member.roles.map(r => r.name);
-                      const found1 = findID.filter(word => word.length > 26);
-                      found1.toString();
-                      var found2 = found1[0]
-                      var found3 = found2.split(' ');
-                      var nick = found3[3]
-                      var chars = Number(found3[0]);
-                      var points = chars + 1
-                      let newName = points + ' ' + 'points' + ' ' + message.author.id + ' ' + nick
-                      let input = chars + ' ' + 'points' + ' ' + message.author.id + ' ' + nick
-                      let role = message.guild.roles.find("name", input);
-                      role.setName(newName);
-              }
-              else {
-                    lastSender = message.guild.lastSender = message.author    
-                    NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls but hasnt gained a point.')
-              }            
-        }
-        else {
-              lastSender = message.guild.lastSender = message.author    
-              NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls, but isnt registered.')
-        }
-               
-               function stop() {
-                       console.log('cleared');
-                       clearInterval(inter1);
-                       clearInterval(inter2);
-                       clearInterval(inter3);
+     function cooldown() {
+           function cool() {
+                 coold = false
+           }
+           coold = true
+           setTimeout(cool, 60000);
+     }
+     if (coold === true) {
+           NOTIFY_CHANNEL.sendMessage('Woah slow down buddy');
+     }
+     else {          
+        if (message.content == prefix + 'clear') {
+             let checkIf = message.guild.roles.find("name", "Registered");
+             if (message.member.roles.has(checkIf.id)) {
+                    if (canAdd === true) {
+                          lastSender = message.guild.lastSender = message.author    
+                          NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls and has gained 1 point.')
+                          var findID = message.member.roles.map(r => r.name);
+                          const found1 = findID.filter(word => word.length > 26);
+                          found1.toString();
+                          var found2 = found1[0]
+                          var found3 = found2.split(' ');
+                          var nick = found3[3]
+                          var chars = Number(found3[0]);
+                          var points = chars + 1
+                          let newName = points + ' ' + 'points' + ' ' + message.author.id + ' ' + nick
+                          let input = chars + ' ' + 'points' + ' ' + message.author.id + ' ' + nick
+                          let role = message.guild.roles.find("name", input);
+                          role.setName(newName);
                }
-                canAdd = false
-                client.user.setStatus('online')
-                client.user.setPresence({ game: { name: 'The walls are safe.', type: 0 } });
-                stop();
-                setTimeout(start, 100);                 
-             }           
+                    else {
+                          lastSender = message.guild.lastSender = message.author    
+                        NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls but hasnt gained a point.')
+                   }            
+              }
+             else {
+                 lastSender = message.guild.lastSender = message.author    
+                 NOTIFY_CHANNEL.sendMessage(lastSender + " " + 'has cleared the walls, but isnt registered.')
+              }
+               
+                    function stop() {
+                          console.log('cleared');
+                          clearInterval(inter1);
+                          clearInterval(inter2);
+                          clearInterval(inter3);
+                   }
+                    canAdd = false
+                    client.user.setStatus('online')
+                    client.user.setPresence({ game: { name: 'The walls are safe.', type: 0 } });
+                    stop();
+                    setTimeout(start, 100);                 
+               }   
+     }
 });
 
 client.on ('message', message => {
