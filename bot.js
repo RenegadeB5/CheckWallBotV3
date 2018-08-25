@@ -141,7 +141,8 @@ client.on ('message', message => {
         const lb1 = findID.filter(word => word.length > 26);
         console.log(lb1);
         for (var i in lb1) {
-            console.log(lb1[i]);
+            let lb2 = lb1[i].split(' ').join(',');
+            console.log(lb2);
         }
         
         }
