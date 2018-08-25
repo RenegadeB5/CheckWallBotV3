@@ -153,7 +153,8 @@ client.on ('message', message => {
         let lbF = lb.sort(function(a, b){                            
                         return b.points-a.points;
                   })
-        NOTIFY_CHANNEL.sendMessage(lbF);
+        let lbF1 = lbF[0]
+        NOTIFY_CHANNEL.sendMessage(lbF1);
         }
 });
       
