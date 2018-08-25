@@ -8,6 +8,7 @@ var NOTIFY_CHANNEL;
 var minutes = 0
 var inter1;
 var inter2;
+var inter3;
 const sql = require("sqlite");
 sql.open("./score.sqlite");
 
@@ -126,6 +127,7 @@ client.on('message', message => {
                        console.log('cleared');
                        clearInterval(inter1);
                        clearInterval(inter2);
+                       clearInterval(inter3);
                }
                 canAdd = false
                 client.user.setStatus('online')
@@ -165,11 +167,20 @@ client.on ('message', message => {
   if (message.content === prefix + "weewoo") {
     client.user.setStatus('dnd')
     client.user.setPresence({ game: { name: 'We are being raided!', type: 0 } });
-    NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
-    NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
-    NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
-    NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
-    NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
+    function weewoo() {
+            NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
+            NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
+            NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
+            NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
+            NOTIFY_CHANNEL.sendMessage('@everyone WE ARE BEING RAIDED!', {tts: false});
+    }
+    function stop() {
+          console.log('weewoo');
+          clearInterval(inter1);
+          clearInterval(inter2);
+    }
+    stop();
+    inter3 = setInterval(weewoo, 30000);
   }
 });
       
