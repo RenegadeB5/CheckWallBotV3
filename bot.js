@@ -155,9 +155,11 @@ client.on ('message', message => {
                   })
         console.log(lbF);
         for (var i in lbF) {
-              let lbmessage = Number(lbF[i].points) + lbF[i].nick2.join(' ')
+              let lbmessage = Number(lbF[i].points) + lbF[i].nick2
               NOTIFY_CHANNEL.sendMessage(lbmessage);
               console.log(lbmessage);
+              console.log(lbF[i].points);
+              console.log(lbF[i].nick2);
         }
         }
 });
