@@ -146,7 +146,7 @@ client.on ('message', message => {
            let points2 = Number(lb3[0]);
            console.log(nick2);
            console.log(points2);
-           console.log(lb2);
+           console.log(lb3);
         }
         
         }
