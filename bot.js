@@ -100,7 +100,7 @@ client.on('message', message => {
                 function cool() {
                       coold = false
                 }
-                setTimeout(cool, 60000);
+                setTimeout(cool, 4000);
           }
           if (coold === true) {
                 NOTIFY_CHANNEL.sendMessage('Woah slow down buddy.');
@@ -170,7 +170,7 @@ client.on ('message', message => {
                         return b.points-a.points;
                   })
         for (var i in lbF) {
-               let lbmessage = Number(lbF[i].points) + ' ' + 'points:' + ' ' + lbF[i].nickname
+               let lbmessage = '```' + Number(lbF[i].points) + ' ' + 'points:' + ' ' + lbF[i].nickname + '```'
                NOTIFY_CHANNEL.sendMessage(lbmessage);
         }        
   }
