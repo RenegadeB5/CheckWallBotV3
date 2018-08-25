@@ -19,6 +19,8 @@ client.on('ready', () => {
       console.log('successfully Logged In As Wall Check Bot!');
       NOTIFY_CHANNEL = client.channels.find("name", "checkwall");
       coold = false;
+      client.user.setStatus('online')
+      client.user.setPresence({ game: { name: 'The walls are safe.', type: 0 } });
       
       function late() {
               inter1 = setInterval(timeto, 60000);
