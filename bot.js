@@ -146,8 +146,9 @@ client.on ('message', message => {
             let point = lb2[0]
             let nick2 = lb2[3]
             Object.assign(lb, {point: nick2});
+            console.log(lb);
         }
-        console.log(lb);
+        
         }
 });
       
