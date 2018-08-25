@@ -105,7 +105,9 @@ client.on('message', message => {
      if (coold === true) {
            NOTIFY_CHANNEL.sendMessage('Woah slow down buddy');
      }
-     else {          
+     else { 
+        coold = true
+        cooldown();
         if (message.content == prefix + 'clear') {
              let checkIf = message.guild.roles.find("name", "Registered");
              if (message.member.roles.has(checkIf.id)) {
