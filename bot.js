@@ -155,7 +155,7 @@ client.on ('message', message => {
                   })
         console.log(lbF);
         for (var i in lbF) {
-              let lbmessage = lbF.points + lbF.nick2
+              let lbmessage = lbF[i].points + lbF[i].nick2
               NOTIFY_CHANNEL.sendMessage(lbmessage);
               console.log(lbF[i].points);
         }
