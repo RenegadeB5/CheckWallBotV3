@@ -145,6 +145,7 @@ client.on ('message', message => {
             let lb2 = lb1[i].split(' ');
             let point = Number(lb2[0]);
             let nick2 = lb2[3]
+            console.log(lb2);
             var singleObj = {}
             singleObj['points'] = point;
             singleObj['nickname'] = nick2;
