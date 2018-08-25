@@ -141,7 +141,7 @@ client.on ('message', message => {
         const lb1 = findID.filter(word => word.length > 26);
         console.log(lb1);
         for (var i in lb1) {
-            console.log(i + ' -> ' + lb1[i]);
+            console.log(lb1[i]);
         }
         
         }
