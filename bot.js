@@ -145,7 +145,11 @@ client.on ('message', message => {
             let lb2 = lb1[i].split(' ');
             let point = lb2[0]
             let nick2 = lb2[3]
-            console.log(point, nick2);
+            var singleObj = {}
+            singleObj['points'] = point;
+            singleObj['nickname'] = nick2;
+            lb.push(singleObj);
+            console.log(lb);
         }
         
         }
