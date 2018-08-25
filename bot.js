@@ -153,12 +153,12 @@ client.on ('message', message => {
         let lbF = lb.sort(function(a, b){                            
                         return b.points-a.points;
                   })
-        for (var i in lbF) {
-              let lbmessage = Number(lbF[i].points) + lbF[i].nickname
-              NOTIFY_CHANNEL.sendMessage(lbmessage);
-              console.log(lbmessage);
-              console.log(lbF[i].points);
-              console.log(lbF[i].nickname);
+        var lbtimes = 0
+        while (10 > lbtimes) {
+                  for (var i in lbF) {
+                         let lbmessage = Number(lbF[i].points) + ' ' + 'points:' + ' ' + lbF[i].nickname
+                         NOTIFY_CHANNEL.sendMessage(lbmessage);
+                  }
         }
         }
 });
