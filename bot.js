@@ -150,10 +150,10 @@ client.on ('message', message => {
             singleObj['nickname'] = nick2;
             lb.push(singleObj);
         }
-        lb.sort(function(a, b){
-            return a.points-b.points
-        })
-        
+        let lbF = lb.sort(function(a, b){                            
+                        return b.points-a.points;
+                  })
+        console.log(lbF);
         }
 });
       
