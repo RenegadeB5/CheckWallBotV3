@@ -97,17 +97,16 @@ client.on ('message', message => {
 client.on('message', message => {
    if (message.content == prefix + 'clear') {
           function cooldown() {
+                coold = true
                 function cool() {
                       coold = false
                 }
-                coold = true
                 setTimeout(cool, 60000);
           }
           if (coold === true) {
                 NOTIFY_CHANNEL.sendMessage('Woah slow down buddy');
           }
           else { 
-             coold = true
              cooldown();     
              let checkIf = message.guild.roles.find("name", "Registered");
              if (message.member.roles.has(checkIf.id)) {
