@@ -145,7 +145,7 @@ client.on ('message', message => {
             let lb2 = lb1[i].split(' ');
             let point = lb2[0]
             let nick2 = lb2[3]
-            jsonObj[point.id] = nick2.name;
+            lb[point.id] = nick2.name;
             console.log(lb);
         }
         
