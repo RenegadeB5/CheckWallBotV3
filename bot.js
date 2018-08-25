@@ -140,7 +140,7 @@ client.on ('message', message => {
         var findID = message.guild.roles.map(r => r.name);
         const lb1 = findID.filter(word => word.length > 26);
         console.log(lb1);
-        let lb = " "
+        let lb = [ ];
         for (var i in lb1) {
             let lb2 = lb1[i].split(' ');
             let point = lb2[0]
