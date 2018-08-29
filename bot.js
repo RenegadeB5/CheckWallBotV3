@@ -171,9 +171,16 @@ client.on ('message', message => {
         let lbF = lb.sort(function(a, b){                            
                         return b.points-a.points;
                   })
+        let countlb = 0
         for (var i in lbF) {
-               let lbmessage = '```' + Number(lbF[i].points) + ' ' + 'points:' + ' ' + lbF[i].nickname + '```'
-               NOTIFY_CHANNEL.sendMessage(lbmessage);
+              if (countlb >= 10) {
+                    return;
+              }
+              else {
+                   countlb += 1
+                   let lbmessage = '```' + Number(lbF[i].points) + ' ' + 'points:' + ' ' + lbF[i].nickname + '```'
+                   NOTIFY_CHANNEL.sendMessage(lbmessage);
+              }
         }        
   }
 });
